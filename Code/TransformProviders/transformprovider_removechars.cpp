@@ -53,8 +53,8 @@ void TransformProvider_removeChars::UpdateGUIvars()
 QString TransformProvider_removeChars::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
 {
     QString transformed=in;
-    int fromIndex;
-    int toIndex;
+    int fromIndex=0;
+    int toIndex=0;
     (void)inFullUrl;
     (void)index;
 

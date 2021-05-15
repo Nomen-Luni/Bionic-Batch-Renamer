@@ -33,3 +33,6 @@
 
 # Build directory
 Build/
+
+# .debs
+*.deb
