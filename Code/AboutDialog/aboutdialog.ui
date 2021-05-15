@@ -39,9 +39,12 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bionic Batch Renamer&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;SOFTWARE_VERSION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer is a powerful tool to rename multiple files at once, utilising a Qt based GUI.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Interface and functionality heavily inspired by &lt;a href=&quot;https://docs.xfce.org/xfce/thunar/start&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Thunar's&lt;/span&gt;&lt;/a&gt; 'bulk rename' plugin.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer source on GitHub&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bionic Batch Renamer&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;SOFTWARE_VERSION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer is a powerful tool to rename multiple files at once, utilising a Qt based GUI.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Interface and functionality heavily inspired by &lt;a href=&quot;https://docs.xfce.org/xfce/thunar/bulk-renamer/start&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Thunar's 'bulk renamer'&lt;/span&gt;&lt;/a&gt; plugin.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer &lt;a href=&quot;https://github.com/Nomen-Luni/Bionic-Batch-Renamer&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;source on GitHub.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="openExternalLinks">
     <bool>true</bool>
    </property>
   </widget>

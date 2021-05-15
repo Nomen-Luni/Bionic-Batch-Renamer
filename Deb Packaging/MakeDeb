@@ -1,0 +1,5 @@
+#!/bin/bash
+deb_config_dir='bionic-batch-renamer_1.0-1_amd64'
+rm $deb_config_dir/usr/local/bin/*
+cp ../Build/Batch_Renamer $deb_config_dir/usr/local/bin/
+dpkg-deb --build --root-owner-group <$deb_config_dir> 
