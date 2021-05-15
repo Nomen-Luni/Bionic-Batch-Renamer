@@ -1,9 +1,9 @@
-#include "mainwindow.h"
+#include "MainWindow/mainwindow.h"
 #include <QApplication>
 #include <QLocale>
 #include <QMessageBox>
 #include <QTranslator>
-#include "transformengine.h"
+#include "TransformEngine/transformengine.h"
 
 int main(int argc, char *argv[])
 {

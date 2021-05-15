@@ -1,6 +1,6 @@
 #include "transformprovider_datetime.h"
 #include "ui_transformprovider_datetime.h"
-#include "mainwindow.h" //For signal connection
+#include "MainWindow/mainwindow.h" //For signal connection
 #include <QDateTime>
 #include <QFileInfo>
 #include "KF5/KExiv2/kexiv2/kexiv2.h"

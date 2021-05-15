@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
-#include "transformengine.h"
-#include "aboutdialog.h"
+#include "TransformEngine/transformengine.h"
+#include "AboutDialog/aboutdialog.h"
 
 //Transform providers
 #include "TransformProviders/transformprovider_case.h"

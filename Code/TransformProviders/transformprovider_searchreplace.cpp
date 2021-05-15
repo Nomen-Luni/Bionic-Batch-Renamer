@@ -1,6 +1,6 @@
 #include "transformprovider_searchreplace.h"
 #include "ui_transformprovider_searchreplace.h"
-#include "mainwindow.h" //For signal connection
+#include "MainWindow/mainwindow.h" //For signal connection
 #include <QRegularExpression>
 
 TransformProvider_searchReplace::TransformProvider_searchReplace(QWidget *parent)

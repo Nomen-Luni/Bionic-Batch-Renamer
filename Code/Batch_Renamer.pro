@@ -27,8 +27,8 @@ SOURCES += \
 HEADERS += \
     version.h\
     MainWindow/mainwindow.h \
-    TransformEngine/enum_transformScope.h \
     TransformEngine/transformengine.h \
+    TransformProviders/enum_transformScope.h \
     TransformProviders/transformprovider.h \
     TransformProviders/transformprovider_case.h \
     TransformProviders/transformprovider_datetime.h \

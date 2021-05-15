@@ -1,6 +1,6 @@
 #include "transformprovider_removechars.h"
 #include "ui_transformprovider_removechars.h"
-#include "mainwindow.h" //For signal connection
+#include "MainWindow/mainwindow.h" //For signal connection
 
 TransformProvider_removeChars::TransformProvider_removeChars(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor

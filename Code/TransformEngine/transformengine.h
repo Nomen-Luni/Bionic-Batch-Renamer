@@ -2,7 +2,7 @@
 #define TRANSFORMENGINE_H
 
 #include <QStringList>
-#include "enum_transformScope.h"
+#include "TransformProviders/enum_transformScope.h"
 #include "TransformProviders/transformprovider.h"
 
 class TransformEngine

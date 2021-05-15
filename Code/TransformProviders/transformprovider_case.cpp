@@ -1,6 +1,6 @@
 #include "transformprovider_case.h"
 #include "ui_transformprovider_case.h"
-#include "mainwindow.h" //For signal connection
+#include "MainWindow/mainwindow.h" //For signal connection
 
 TransformProvider_case::TransformProvider_case(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor

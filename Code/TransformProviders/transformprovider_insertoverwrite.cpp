@@ -1,6 +1,6 @@
 #include "transformprovider_insertoverwrite.h"
 #include "ui_transformprovider_insertoverwrite.h"
-#include "mainwindow.h" //For signal connection
+#include "MainWindow/mainwindow.h" //For signal connection
 
 TransformProvider_insertOverwrite::TransformProvider_insertOverwrite(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor
