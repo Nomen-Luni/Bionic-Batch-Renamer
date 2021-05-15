@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TransformProvider_numbering</class>
+ <widget class="QWidget" name="TransformProvider_numbering">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>150</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>238</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_StartNumber">
+     <property name="text">
+      <string>Start Number</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QSpinBox" name="startNumberSpinBox">
+     <property name="value">
+      <number>1</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_Location">
+     <property name="text">
+      <string>Location</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="locationComboBox">
+     <item>
+      <property name="text">
+       <string>At Start</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>At End</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="label_Spacer">
+     <property name="text">
+      <string>Spacer:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QComboBox" name="spacerComboBox">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>&lt;None&gt;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>&lt;Space&gt;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>&lt;Period&gt;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>&lt;Hyphen&gt;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>&lt;Underscore&gt;</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_Padding">
+     <property name="text">
+      <string>Padding</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="padCharacterComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>&lt;None&gt;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Zeros</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Spaces</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_PadWidth">
+     <property name="text">
+      <string>Pad Width:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QSpinBox" name="padWidthSpinBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="minimum">
+      <number>2</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

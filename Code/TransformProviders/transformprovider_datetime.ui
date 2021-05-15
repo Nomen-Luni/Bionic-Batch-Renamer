@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TransformProvider_dateTime</class>
+ <widget class="QWidget" name="TransformProvider_dateTime">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>114</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_InsertTime">
+     <property name="text">
+      <string>Insert time:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <widget class="QComboBox" name="fromComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>From the front (left)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>From the back (right)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0" rowspan="2" alignment="Qt::AlignLeft">
+    <widget class="QLabel" name="label_AtPosition">
+     <property name="text">
+      <string>At position:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="dateSelectComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>Current</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Date Created</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Date Accessed</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Date Modified</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Date Picture Taken</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="3" rowspan="2">
+    <widget class="QLineEdit" name="formatLineEdit">
+     <property name="text">
+      <string>dd:MM:yyyy@hh:mm:ss </string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" rowspan="2">
+    <widget class="QLabel" name="label_Format">
+     <property name="text">
+      <string>Format:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" alignment="Qt::AlignRight">
+    <widget class="QSpinBox" name="atPositionSpinBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

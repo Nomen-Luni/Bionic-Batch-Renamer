@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TransformProvider_insertOverwrite</class>
+ <widget class="QWidget" name="TransformProvider_insertOverwrite">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>580</width>
+    <height>92</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="2" rowspan="3">
+    <widget class="QLineEdit" name="textLineEdit"/>
+   </item>
+   <item row="2" column="1" rowspan="2" alignment="Qt::AlignBottom">
+    <widget class="QSpinBox" name="positionSpinBox"/>
+   </item>
+   <item row="0" column="0" rowspan="3">
+    <widget class="QComboBox" name="modeComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>Insert</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Overwrite</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_AtPosition">
+     <property name="text">
+      <string>At position:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" alignment="Qt::AlignTop">
+    <widget class="QComboBox" name="fromComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>From the front (left)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>From the back (right)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label_Text">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Text:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
