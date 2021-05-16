@@ -9,4 +9,4 @@ Icon=cm_multirename
 
 [Desktop Action BatchRename]
 Name=Batch Rename
-Exec=Bionic_Batch_Renamer %U
+Exec=Batch_Renamer %U

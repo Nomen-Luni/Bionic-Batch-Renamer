@@ -78,7 +78,6 @@ int TransformEngine::SelectScope(transformScope scope)
 
 void TransformEngine::DoTransform()
 {
-    //TransformProvider* provider;
     TargetFileNames.clear();
     auto provider=transformProviders[selectedProviderIndex];
     provider->transformMulti(SourceUrls, SourceFileNames, TargetFileNames, scope);

@@ -55,6 +55,7 @@ void MainWindow::updateFileNamesTable()
     QStringList* targetfiles=TransformEngine::GetTargetFileNamesListPtr();
 
     ui->fileNamesTableWidget->clearContents();
+    ui->fileNamesTableWidget->setRowCount(sourcefiles->count());
 
     int row=0;
     foreach (QString string, *sourcefiles)
@@ -68,6 +69,7 @@ void MainWindow::updateFileNamesTable()
         ui->fileNamesTableWidget->setItem(row,1,new QTableWidgetItem(string));
         row++;
     }
+    //ui->fileNamesTableWidget->verticalHeader()->setDefaultSectionSize(ui->fileNamesTableWidget->verticalHeader()->minimumSectionSize());
 }
 
 void MainWindow::transformChanged()
