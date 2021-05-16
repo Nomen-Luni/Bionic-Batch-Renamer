@@ -20,7 +20,7 @@ public:
 private:
     virtual QString transform(const QString& inFullUrl, const QString& in, int index, bool& success) = 0;
     virtual void UpdateGUIvars() = 0;
-    int SplitFileName(const QString& fullFileName, QString& filename, QString& extension, bool greedyExtension=false);
+    bool SplitFileName(const QString& fullFileName, QString& filename, QString& extension, bool greedyExtension=false);
 };
 
 #endif // TRANSFORMPROVIDER_H

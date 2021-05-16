@@ -19,6 +19,7 @@ public:
     static void DoTransform();
     static bool RenameFiles();
     static QStringList CreateTargetUrls();
+    static bool SortSourceUrls(bool reverseAlphabetical);
 
 private:
     TransformEngine() {}    //Static/singleton- not instanced

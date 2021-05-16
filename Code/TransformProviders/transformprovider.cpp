@@ -12,24 +12,33 @@ bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStr
     UpdateGUIvars();
     QString fileNameOnly;
     QString extensionOnly;
+    bool splitFound;
     foreach (QString str, in)
     {
         switch (scope)
         {    
             case name_and_extension:
-                SplitFileName(str,fileNameOnly,extensionOnly);
-                //transformed=fileNameOnly+":"+extensionOnly;
                 transformed=transform(inFullUrls[index],str, index, successOne);
             break;
             case name_only:
-                SplitFileName(str,fileNameOnly,extensionOnly);
+                splitFound=SplitFileName(str,fileNameOnly,extensionOnly);
                 transformed=transform(inFullUrls[index],fileNameOnly, index, successOne);
-                transformed=transformed+"."+extensionOnly;
+                if (splitFound)
+                {
+                    transformed=transformed+"."+extensionOnly;
+                }
             break;
             case extension_only:
-                SplitFileName(str,fileNameOnly,extensionOnly);
-                transformed=transform(inFullUrls[index],extensionOnly, index, successOne);
-                transformed=fileNameOnly+"."+transformed;
+                splitFound=SplitFileName(str,fileNameOnly,extensionOnly);
+                if (splitFound)
+                {
+                    transformed=transform(inFullUrls[index],extensionOnly, index, successOne);
+                    transformed=fileNameOnly+"."+transformed;
+                }
+                else
+                {
+                    transformed=str;
+                }
             break;
         }
 
@@ -44,7 +53,7 @@ bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStr
     return successAll;
 }
 
-int TransformProvider::SplitFileName(const QString& fullFileName, QString& filename, QString& extension, bool greedyExtension)
+bool TransformProvider::SplitFileName(const QString& fullFileName, QString& filename, QString& extension, bool greedyExtension)
 {
     int offset;
     if (greedyExtension)
@@ -65,7 +74,7 @@ int TransformProvider::SplitFileName(const QString& fullFileName, QString& filen
         filename=fullFileName;
         extension="";
     }
-    return 0;
+    return offset>=0;
 }
 
 

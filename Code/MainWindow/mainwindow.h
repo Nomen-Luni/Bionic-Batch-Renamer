@@ -23,23 +23,17 @@ public slots:
 
 private slots:
     void on_operationComboBox_currentIndexChanged(int index);
-
     void on_AddPushButton_clicked();
-
     void on_RemovePushButton_clicked();
-
     void on_clearPushButton_clicked();
-
     void on_renamePushButton_clicked();
-
     void on_aboutButton_clicked();
-
     void on_targetComboBox_currentIndexChanged(int index);
+    void on_TableNameHeaderClicked(int column);
 
 private:
     void AddProvider(TransformProvider* provider);
     Ui::MainWindow *ui;
     void updateFileNamesTable();
-    //void transformChangedCallback(int arg);
 };
 #endif // MAINWINDOW_H

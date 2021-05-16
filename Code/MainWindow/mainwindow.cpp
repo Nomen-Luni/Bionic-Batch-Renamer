@@ -21,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent, QApplication* app)
 
     connect(ui->closePushButton, &QPushButton::clicked, app, &QCoreApplication::quit, Qt::QueuedConnection);
 
+    auto tableNameHeader=ui->fileNamesTableWidget->horizontalHeader();
+    connect(tableNameHeader, &QHeaderView::sectionClicked, this, &MainWindow::on_TableNameHeaderClicked);
+
     AddProvider(new TransformProvider_case(this));
     AddProvider(new TransformProvider_removeChars(this));
     AddProvider(new TransformProvider_numbering(this));
@@ -122,3 +125,22 @@ void MainWindow::on_targetComboBox_currentIndexChanged(int index)
     TransformEngine::SelectScope((transformScope)index);
     transformChanged();
 }
+
+void MainWindow::on_TableNameHeaderClicked(int index)
+{
+    if (index==0)   //Name column header
+    {
+        auto val=ui->fileNamesTableWidget->horizontalHeader()->sortIndicatorOrder();
+        if (val==Qt::SortOrder::AscendingOrder)
+        {
+            TransformEngine::SortSourceUrls(false);
+        }
+        else
+        {
+            TransformEngine::SortSourceUrls(true);
+        }
+        //Quick but slightly dirty way of reordering target filename list and updating table...
+        transformChanged();
+    }
+}
+

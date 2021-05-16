@@ -2,6 +2,7 @@
 #include "./FileSystemOverlay/filesystemoverlay.h"
 #include <QFileInfo>
 #include <QFile>
+#include <algorithm>
 
 //Definition of variables declared private static in header
 int TransformEngine::numProviders=0;
@@ -128,5 +129,25 @@ bool TransformEngine::RenameFiles()
         SourceFileNames.append(targetFileName);
     }
 
+    return true;
+}
+
+bool TransformEngine::SortSourceUrls(bool reverseAlphabetical)
+{
+    QFileInfo fileInfo;
+
+    SourceUrls.sort(Qt::CaseInsensitive);  //Sorts alphabetically
+    if (reverseAlphabetical)
+    {
+        std::reverse(SourceUrls.begin(), SourceUrls.end());
+    }
+
+    //Now update the source and target filenames
+    SourceFileNames.clear();
+    foreach (QString url, SourceUrls)
+    {
+        fileInfo.setFile(url);
+        SourceFileNames.push_back(fileInfo.fileName());
+    }
     return true;
 }

@@ -1,5 +1,4 @@
 #include "filesystemoverlay.h"
-//#include <boost/filesystem.hpp>
 #include <QFile>
 
 FileSystemOverlay::FileSystemOverlay()
