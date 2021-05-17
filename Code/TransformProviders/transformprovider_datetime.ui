@@ -14,41 +14,21 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_InsertTime">
+   <item row="0" column="3" rowspan="2">
+    <widget class="QLineEdit" name="formatLineEdit">
      <property name="text">
-      <string>Insert time:</string>
+      <string>dd:MM:yyyy@hh:mm:ss </string>
      </property>
     </widget>
    </item>
-   <item row="2" column="2" colspan="2">
-    <widget class="QComboBox" name="fromComboBox">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <item>
-      <property name="text">
-       <string>From the front (left)</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>From the back (right)</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="1" column="0" rowspan="2" alignment="Qt::AlignLeft">
+   <item row="2" column="0">
     <widget class="QLabel" name="label_AtPosition">
      <property name="text">
       <string>At position:</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
+   <item row="0" column="1" rowspan="2">
     <widget class="QComboBox" name="dateSelectComboBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -83,10 +63,10 @@
      </item>
     </widget>
    </item>
-   <item row="0" column="3" rowspan="2">
-    <widget class="QLineEdit" name="formatLineEdit">
+   <item row="0" column="0" rowspan="2">
+    <widget class="QLabel" name="label_InsertTime">
      <property name="text">
-      <string>dd:MM:yyyy@hh:mm:ss </string>
+      <string>Insert time:</string>
      </property>
     </widget>
    </item>
@@ -97,7 +77,27 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1" alignment="Qt::AlignRight">
+   <item row="2" column="2" colspan="2">
+    <widget class="QComboBox" name="fromComboBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>From the front (left)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>From the back (right)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1" alignment="Qt::AlignLeft">
     <widget class="QSpinBox" name="atPositionSpinBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -106,6 +106,19 @@
       </sizepolicy>
      </property>
     </widget>
+   </item>
+   <item row="3" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
