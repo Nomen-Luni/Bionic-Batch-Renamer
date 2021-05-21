@@ -6,6 +6,7 @@ Actions=BatchRename;
 X-KDE-StartupNotify=false
 X-KDE-Priority=TopLevel
 Icon=cm_multirename
+X-KDE-MinNumberOfUrls=2
 
 [Desktop Action BatchRename]
 Name=Batch Rename
