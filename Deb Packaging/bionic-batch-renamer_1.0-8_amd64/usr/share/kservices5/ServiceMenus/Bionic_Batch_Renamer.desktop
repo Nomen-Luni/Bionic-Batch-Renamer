@@ -5,9 +5,10 @@ MimeType=all/all;
 Actions=BatchRename;
 X-KDE-StartupNotify=false
 X-KDE-Priority=TopLevel
-Icon=cm_multirename
 X-KDE-MinNumberOfUrls=2
+Icon=cm_multirename
 
 [Desktop Action BatchRename]
 Name=Batch Rename
 Exec=Batch_Renamer %U
+Icon=cm_multirename
