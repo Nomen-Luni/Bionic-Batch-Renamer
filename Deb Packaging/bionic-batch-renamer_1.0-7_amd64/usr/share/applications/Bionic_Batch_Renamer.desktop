@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Bionic Batch Renamer
+GenericName=Batch Renamer
+Exec=Batch_Renamer
+Icon=cm_multirename
+Terminal=false
+Categories=System;
