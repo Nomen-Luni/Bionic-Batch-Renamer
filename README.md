@@ -24,7 +24,7 @@ Interface heavily inspired by [Thunar's 'bulk renamer'](https://docs.xfce.org/xf
   
   - Double-click the .deb installation file and install via your package manager. The executable will be located at /usr/local/bin/Batch_Renamer.
 
-
 #### Authors:
 
 - Lee Cooper
+- Heimen Stoffels (Dutch Translation)
