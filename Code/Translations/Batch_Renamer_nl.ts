@@ -14,12 +14,12 @@
     <message>
         <location filename="../AboutDialog/aboutdialog.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Over</translation>
     </message>
     <message>
         <location filename="../AboutDialog/aboutdialog.ui" line="42"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bionic Batch Renamer&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;SOFTWARE_VERSION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer is a powerful tool to rename multiple files at once, utilising a Qt based GUI.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Interface and functionality heavily inspired by &lt;a href=&quot;https://docs.xfce.org/xfce/thunar/bulk-renamer/start&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Thunar&apos;s &apos;bulk renamer&apos;&lt;/span&gt;&lt;/a&gt; plugin.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer &lt;a href=&quot;https://github.com/Nomen-Luni/Bionic-Batch-Renamer&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;source on GitHub.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bionic Batch Renamer&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;SOFTWARE_VERSION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer is een krachtig programma waarmee meerdere bestandsnamen tegelijk kunnen worden gewijzigd middels een met Qt gemaakt venster.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;De vormgeving en functionaliteit zijn sterk geïnspireerd op &lt;a href=&quot;https://docs.xfce.org/xfce/thunar/bulk-renamer/start&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Thunar&apos;s ‘bulk rename’-&lt;/span&gt;&lt;/a&gt;plug-in.&lt;/p&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Bionic Batch Renamer-broncode op GitHub&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -32,17 +32,17 @@
     <message>
         <location filename="../MainWindow/mainwindow.ui" line="191"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <location filename="../MainWindow/mainwindow.ui" line="236"/>
         <source>Name and extension</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam en extensie</translation>
     </message>
     <message>
         <location filename="../MainWindow/mainwindow.ui" line="246"/>
         <source>Extension only</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen de extensie</translation>
     </message>
     <message>
         <location filename="../MainWindow/mainwindow.ui" line="324"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../MainWindow/mainwindow.cpp" line="85"/>
         <source>Select files to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer toe te voegen bestanden</translation>
     </message>
 </context>
 <context>
@@ -108,7 +108,8 @@
         <location filename="../main.cpp" line="26"/>
         <source>Problem with selected files.
 Check you have write permission for all files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een probleem met de geselecteerde bestanden.
+Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
@@ -116,32 +117,32 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_case.cpp" line="10"/>
         <source>Uppercase / Lowercase</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofdletters/Kleine letters</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.cpp" line="13"/>
         <source>Date Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum en tijd</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.cpp" line="10"/>
         <source>Numbering</source>
-        <translation type="unfinished"></translation>
+        <translation>Nummering</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_searchreplace.cpp" line="11"/>
         <source>Search &amp; Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken en vervangen</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_insertoverwrite.cpp" line="10"/>
         <source>Insert / Overwrite</source>
-        <translation type="unfinished"></translation>
+        <translation>Invoegen/Overschrijven</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_removechars.cpp" line="10"/>
         <source>Remove Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekens wissen</translation>
     </message>
 </context>
 <context>
@@ -162,12 +163,12 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="43"/>
         <source>lower case</source>
-        <translation type="unfinished"></translation>
+        <translation>kleine letters</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="48"/>
         <source>UPPER CASE</source>
-        <translation type="unfinished"></translation>
+        <translation>HOOFDLETTERS</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="53"/>
@@ -177,7 +178,7 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="58"/>
         <source>First character uppercase</source>
-        <translation>Eerste letter hoofdletter</translation>
+        <translation>Beginhoofdletter</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="35"/>
@@ -195,7 +196,7 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="69"/>
         <source>Insert time:</source>
-        <translation>Tijd toekennen:</translation>
+        <translation>Datum/Tijd toekennen:</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="90"/>
@@ -215,7 +216,7 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="20"/>
         <source>dd:MM:yyyy@hh:mm:ss </source>
-        <translation type="unfinished"></translation>
+        <translation>dd:MM:yyyy@hh:mm:ss </translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="41"/>
@@ -225,22 +226,22 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="46"/>
         <source>Date Created</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanmaakdatum</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="51"/>
         <source>Date Accessed</source>
-        <translation>Geopend op</translation>
+        <translation>Toegangsdatum</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="56"/>
         <source>Date Modified</source>
-        <translation>Bewerkt op</translation>
+        <translation>Bewerkdatum</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="61"/>
         <source>Date Picture Taken</source>
-        <translation>Genomen op</translation>
+        <translation>Fotodatum</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="76"/>
@@ -296,73 +297,73 @@ Check you have write permission for all files.</source>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="32"/>
         <source>Start Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Startgetal</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="46"/>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="54"/>
         <source>At Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Aan het begin</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="59"/>
         <source>At End</source>
-        <translation type="unfinished"></translation>
+        <translation>Aan het eind</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="67"/>
         <source>Spacer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Scheidingsteken:</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="78"/>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="123"/>
         <source>&lt;None&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Geen&gt;</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="83"/>
         <source>&lt;Space&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Spatie&gt;</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="88"/>
         <source>&lt;Period&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Punt&gt;</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="93"/>
         <source>&lt;Hyphen&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Streepje&gt;</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="98"/>
         <source>&lt;Underscore&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Onderliggend streepje&gt;</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="106"/>
         <source>Padding</source>
-        <translation type="unfinished"></translation>
+        <translation>Opvulling</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="128"/>
         <source>Zeros</source>
-        <translation type="unfinished"></translation>
+        <translation>Nullen</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="133"/>
         <source>Spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Spaties</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="141"/>
         <source>Pad Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Opvulbreedte:</translation>
     </message>
     <message>
         <source>Number Format:</source>
