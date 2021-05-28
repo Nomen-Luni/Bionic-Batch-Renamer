@@ -4,14 +4,6 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Bionic Batch Renamer</source>
-        <translation type="vanished">Over Bionic Batch Renamer</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bionic Batch Renamer&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;SOFTWARE_VERSION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer is a powerful tool to rename multiple files at once, utilising a Qt based GUI.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Interface and functionality heavily inspired by Thunar&apos;s &apos;bulk rename&apos; plugin.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer source on GitHub&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://docs.xfce.org/xfce/thunar/start&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Thunar website&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bionic Batch Renamer&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;SOFTWARE_VERSION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer is een krachtig programma waarmee meerdere bestandsnamen tegelijk kunnen worden gewijzigd middels een met Qt gemaakt venster.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;De vormgeving en functionaliteit zijn sterk geïnspireerd op Thunar&apos;s &apos;bulk rename&apos;-plug-in.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bionic Batch Renamer-broncode op GitHub&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://docs.xfce.org/xfce/thunar/start&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Thunar-website&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../AboutDialog/aboutdialog.ui" line="14"/>
         <source>About</source>
         <translation>Over</translation>
@@ -50,38 +42,14 @@
         <translation>Sluiten</translation>
     </message>
     <message>
-        <source>File Name</source>
-        <translation type="vanished">Bestandsnaam</translation>
-    </message>
-    <message>
         <location filename="../MainWindow/mainwindow.ui" line="199"/>
         <source>New Name</source>
         <translation>Nieuwe naam</translation>
     </message>
     <message>
-        <source>Remove</source>
-        <translation type="vanished">Verwijderen</translation>
-    </message>
-    <message>
         <location filename="../MainWindow/mainwindow.ui" line="241"/>
         <source>Name only</source>
         <translation>Alleen de naam</translation>
-    </message>
-    <message>
-        <source>Suffix only</source>
-        <translation type="vanished">Alleen de extensie</translation>
-    </message>
-    <message>
-        <source>Name and Suffix</source>
-        <translation type="vanished">Naam en extensie</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="vanished">Toevoegen</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="vanished">Wissen</translation>
     </message>
     <message>
         <location filename="../MainWindow/mainwindow.ui" line="311"/>
@@ -151,14 +119,6 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
         <location filename="../TransformProviders/transformprovider_case.ui" line="20"/>
         <source>Form</source>
         <translation>Formulier</translation>
-    </message>
-    <message>
-        <source>lowercase</source>
-        <translation type="vanished">kleine letters</translation>
-    </message>
-    <message>
-        <source>UPPERCASE</source>
-        <translation type="vanished">HOOFDLETTERS</translation>
     </message>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="43"/>
@@ -364,58 +324,6 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="141"/>
         <source>Pad Width:</source>
         <translation>Opvulbreedte:</translation>
-    </message>
-    <message>
-        <source>Number Format:</source>
-        <translation type="vanished">Nummeropmaak:</translation>
-    </message>
-    <message>
-        <source>1, 2, 3...</source>
-        <translation type="vanished">1, 2, 3…</translation>
-    </message>
-    <message>
-        <source>01, 02, 03...</source>
-        <translation type="vanished">01, 02, 03…</translation>
-    </message>
-    <message>
-        <source>001, 002, 003...</source>
-        <translation type="vanished">001, 002, 003…</translation>
-    </message>
-    <message>
-        <source>0001, 0002, 0003...</source>
-        <translation type="vanished">0001, 0002, 0003…</translation>
-    </message>
-    <message>
-        <source>a, b, c...</source>
-        <translation type="vanished">a, b, c…</translation>
-    </message>
-    <message>
-        <source>Start With:</source>
-        <translation type="vanished">Beginnen met:</translation>
-    </message>
-    <message>
-        <source>Text Format:</source>
-        <translation type="vanished">Tekstopmaak:</translation>
-    </message>
-    <message>
-        <source>Old name - Text - Number</source>
-        <translation type="vanished">Oorspronkelijke naam - Tekst - Nummer</translation>
-    </message>
-    <message>
-        <source>Number - Text - OldName</source>
-        <translation type="vanished">Nummer - Tekst - Oorspronkelijke naam</translation>
-    </message>
-    <message>
-        <source>Text - Number</source>
-        <translation type="vanished">Tekst - Nummer</translation>
-    </message>
-    <message>
-        <source>Number - Text</source>
-        <translation type="vanished">Nummer - Tekst</translation>
-    </message>
-    <message>
-        <source>Text:</source>
-        <translation type="vanished">Tekst:</translation>
     </message>
 </context>
 <context>
