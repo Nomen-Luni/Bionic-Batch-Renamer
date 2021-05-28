@@ -7,7 +7,7 @@ TransformProvider_insertOverwrite::TransformProvider_insertOverwrite(QWidget *pa
     , ui(new Ui::TransformProvider_insertOverwrite)
 {
     ui->setupUi(this);
-    displayName="Insert / Overwrite";
+    displayName=QObject::tr("Insert / Overwrite");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->fromComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);

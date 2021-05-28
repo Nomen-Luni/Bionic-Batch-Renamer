@@ -8,10 +8,10 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    //QApplication::applicationDirPath()+"/"+"Batch_Renamer_en_GB.ts";
     QTranslator translator;
     QLocale locale=QLocale::system();
-    if (translator.load(":/"+locale.name()+".qm"))
+    QString translationFileName=":/Translations/Batch_Renamer_"+locale.name()+".qm";
+    if (translator.load(translationFileName))
     {
         app.installTranslator(&translator);
     }
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     if (filesOkay==false)
     {
         QMessageBox msg;
-        msg.setText("Problem with selected files.\nCheck you have write permission for all files.");
+        msg.setText(QMessageBox::tr("Problem with selected files.\nCheck you have write permission for all files."));
         msg.exec();
         return 1;
     }

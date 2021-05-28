@@ -10,7 +10,7 @@ TransformProvider_dateTime::TransformProvider_dateTime(QWidget *parent)
     , ui(new Ui::TransformProvider_dateTime)
 {
     ui->setupUi(this);
-    displayName="Date Time";
+    displayName=QObject::tr("Date Time");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->atPositionSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::transformChanged);
@@ -42,9 +42,6 @@ QString TransformProvider_dateTime::transform(const QString& inFullUrl, const QS
     QDateTime date;
     int atIndex;
     KExiv2Iface::KExiv2 exiv2fileInfo(inFullUrl);
-
-    //QDateTime::currentDateTime()
-    //static QFileInfo InfoAboutCurrentFile (files.at (i));
 
     QFileInfo fileInfo(inFullUrl);
 

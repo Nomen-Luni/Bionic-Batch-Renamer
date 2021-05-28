@@ -8,7 +8,7 @@ TransformProvider_searchReplace::TransformProvider_searchReplace(QWidget *parent
     , ui(new Ui::TransformProvider_searchReplace)
 {
     ui->setupUi(this);
-    displayName="Search & Replace";
+    displayName=QObject::tr("Search & Replace");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->caseSensitiveSearchCheckBox,&QCheckBox::toggled,(MainWindow*)parent, &MainWindow::transformChanged);

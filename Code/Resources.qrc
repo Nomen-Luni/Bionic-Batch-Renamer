@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>Translations/Batch_Renamer_en_GB.qm</file>
+        <file>Translations/Batch_Renamer_nl.qm</file>
+    </qresource>
+</RCC>
+

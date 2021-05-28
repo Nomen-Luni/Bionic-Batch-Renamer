@@ -7,7 +7,7 @@ TransformProvider_case::TransformProvider_case(QWidget *parent)
     , ui(new Ui::TransformProvider_case)
 {
     ui->setupUi(this);
-    displayName="Uppercase / Lowercase";
+    displayName=QObject::tr("Uppercase / Lowercase");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->modeComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);//MainWindow::transformChanged);

@@ -15,7 +15,7 @@ class TransformProvider : public QWidget
 
 public:
     explicit TransformProvider(QWidget* parent = nullptr):QWidget(parent){}
-    std::string displayName;
+    QString displayName;
     bool transformMulti(const QStringList& inFullUrls, const QStringList& in, QStringList& out, transformScope txScope);
 private:
     virtual QString transform(const QString& inFullUrl, const QString& in, int index, bool& success) = 0;

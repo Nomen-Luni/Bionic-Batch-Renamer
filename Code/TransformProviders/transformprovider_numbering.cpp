@@ -7,7 +7,7 @@ TransformProvider_numbering::TransformProvider_numbering(QWidget *parent)
     , ui(new Ui::TransformProvider_numbering)
 {
     ui->setupUi(this);
-    displayName="Numbering";
+    displayName=QObject::tr("Numbering");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->startNumberSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::transformChanged);

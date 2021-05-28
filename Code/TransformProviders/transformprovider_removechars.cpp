@@ -7,7 +7,7 @@ TransformProvider_removeChars::TransformProvider_removeChars(QWidget *parent)
     , ui(new Ui::TransformProvider_removeChars)
 {
     ui->setupUi(this);
-    displayName="Remove Characters";
+    displayName=QObject::tr("Remove Characters");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->fromCharsSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::transformChanged);

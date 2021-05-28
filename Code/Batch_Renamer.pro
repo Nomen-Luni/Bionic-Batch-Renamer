@@ -49,16 +49,17 @@ FORMS += \
     TransformProviders/transformprovider_searchreplace.ui \
     AboutDialog/aboutdialog.ui
     
-TRANSLATIONS += \
-    Translations/Batch_Renamer_en_GB.ts
+TRANSLATIONS = \
+    Translations/Batch_Renamer_en_GB.ts \
+    Translations/Batch_Renamer_nl.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+    
 
-DISTFILES += \
-    Translations/Batch_Renamer_nl.ts
+RESOURCES += Resources.qrc
 
 
 

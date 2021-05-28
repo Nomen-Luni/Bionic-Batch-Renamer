@@ -42,7 +42,7 @@ void MainWindow::AddProvider(TransformProvider* provider)
 {
     TransformEngine::AddProvider(provider);
     ui->TransformPagesStackedWidget->addWidget(provider);
-    ui->operationComboBox->addItem(QString::fromStdString(provider->displayName));
+    ui->operationComboBox->addItem(provider->displayName);
 }
 
 void MainWindow::on_operationComboBox_currentIndexChanged(int index)
@@ -72,7 +72,6 @@ void MainWindow::updateFileNamesTable()
         ui->fileNamesTableWidget->setItem(row,1,new QTableWidgetItem(string));
         row++;
     }
-    //ui->fileNamesTableWidget->verticalHeader()->setDefaultSectionSize(ui->fileNamesTableWidget->verticalHeader()->minimumSectionSize());
 }
 
 void MainWindow::transformChanged()
@@ -83,7 +82,7 @@ void MainWindow::transformChanged()
 
 void MainWindow::on_AddPushButton_clicked()
 {
-    auto fileNames = QFileDialog::getOpenFileNames(this, "Select files to add","/path/to/file/","All Files (*.*)");
+    auto fileNames = QFileDialog::getOpenFileNames(this, QFileDialog::tr("Select files to add"),"~","All Files (*.*)");
     TransformEngine::AddSourceUrls(fileNames);
     transformChanged();
 }
