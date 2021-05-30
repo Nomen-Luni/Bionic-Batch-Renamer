@@ -10,5 +10,6 @@ Icon=cm_multirename
 
 [Desktop Action BatchRename]
 Name=Batch Rename
+Name[nl]=Reeks Hernoemen
 Exec=Batch_Renamer %U
 Icon=cm_multirename

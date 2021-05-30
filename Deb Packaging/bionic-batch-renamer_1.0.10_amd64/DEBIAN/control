@@ -1,5 +1,5 @@
 Package: bionic-batch-renamer
-Version: 1.0
+Version: 1.0.10
 Architecture: amd64
 Maintainer: nomen.luni <nomen.luni@gmx.us>
 Description: Implements a KDE plasma service menu option to batch rename files.
