@@ -7,7 +7,7 @@ class FileSystemOverlay
 {
 public:
     FileSystemOverlay();
-    bool RenameFile(QString fromPath, QString toPath);
+    bool RenameFile(QString fromPath, QString toPath, bool allowIdenticalFromTo);
     bool FileExists(QString path);
 private:
     QMap<QString,QString> overlayFiles;

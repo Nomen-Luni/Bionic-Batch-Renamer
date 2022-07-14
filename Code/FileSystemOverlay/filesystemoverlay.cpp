@@ -6,9 +6,10 @@ FileSystemOverlay::FileSystemOverlay()
 
 }
 
-bool FileSystemOverlay::RenameFile(QString fromPath, QString toPath)
+bool FileSystemOverlay::RenameFile(QString fromPath, QString toPath, bool allowIdenticalFromTo)
 {
     if (FileExists(fromPath)==false) return false; //Source file doesn't exist ERROR
+    if ((allowIdenticalFromTo) & (toPath==fromPath)) return true; //New name is same as old and that is allowed
     if (FileExists(toPath)) return false; //File already exists at destination ERROR
 
     overlayFiles.insert(toPath,fromPath);

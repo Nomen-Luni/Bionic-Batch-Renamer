@@ -106,13 +106,14 @@ bool TransformEngine::RenameFiles()
     FileSystemOverlay fsOverlay;
     for (int index=0; index<SourceUrls.length(); index++)
     {
-        success=fsOverlay.RenameFile(SourceUrls[index],TargetUrls[index]);
+        success=fsOverlay.RenameFile(SourceUrls[index],TargetUrls[index], true);
         if (success==false) return false;
     }
 
     for (int index=0; index<SourceUrls.length(); index++)
     {
         QFile sourcefile(SourceUrls[index]);
+        if (SourceUrls[index]==TargetUrls[index]) continue; //No change to filename
         success=sourcefile.rename(TargetUrls[index]);
         if (success==false) return false;
     }

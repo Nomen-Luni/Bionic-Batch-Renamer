@@ -4,7 +4,7 @@ for dirname in *; do
   if [ -d "$dirname" ] && [ ! -L "$dirnname" ]; then
     printf 'Creating .deb for %s\n' "$dirname"
     rm $dirname/usr/local/bin/*
-    cp -nf ../Build/Release/Batch_Renamer $dirname/usr/local/bin/
+    cp -nf ../build-Batch_Renamer-Desktop-Release/Batch_Renamer $dirname/usr/local/bin/
     dpkg-deb --build --root-owner-group $dirname
   fi 
 done

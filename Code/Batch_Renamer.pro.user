@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.13.0, 2021-05-30T13:31:17. -->
+<!-- Written by QtCreator 4.14.1, 2022-07-14T23:30:00. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{393224e1-497b-421e-9f57-474e8ca1259c}</value>
+  <value type="QByteArray">{6500f941-7847-4a27-8ab1-74d5a568f233}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -71,6 +71,7 @@
    <value type="bool" key="ClangCodeModel.UseGlobalConfig">true</value>
    <value type="QString" key="ClangCodeModel.WarningConfigId">Builtin.Questionable</value>
    <valuemap type="QVariantMap" key="ClangTools">
+    <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
     <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
     <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
     <value type="int" key="ClangTools.ParallelJobs">8</value>
@@ -87,15 +88,14 @@
    <value type="QString" key="DeviceType">Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{3a322523-47a1-40ad-81e2-4feb9d1a67ec}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{11292a37-9254-48c8-8452-221fa0af11bf}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-    <value type="bool">true</value>
-    <value type="int" key="EnableQmlDebugging">2</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">../Build/Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">../Build/Debug</value>
+    <value type="int" key="EnableQmlDebugging">0</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -107,12 +107,6 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.BuildTargets"/>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">false</value>
-      <value type="int" key="Qt4ProjectManager.MakeStep.JobCount">37</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments"></value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.OverrideMakeflags">false</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
@@ -123,11 +117,7 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.BuildTargets"/>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">true</value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.OverrideMakeflags">false</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
@@ -141,14 +131,11 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Debug</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
-    <value type="int" key="QtQuickCompiler">2</value>
-    <value type="int" key="SeparateDebugInfo">2</value>
+    <value type="int" key="RunSystemFunction">0</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="bool">true</value>
-    <value type="int" key="EnableQmlDebugging">1</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">../Build/Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">../Build/Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -160,11 +147,6 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.BuildTargets"/>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">false</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments"></value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.OverrideMakeflags">false</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
@@ -175,11 +157,7 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.BuildTargets"/>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">true</value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.OverrideMakeflags">false</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
@@ -193,14 +171,13 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Release</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
-    <value type="int" key="QtQuickCompiler">2</value>
-    <value type="int" key="SeparateDebugInfo">2</value>
+    <value type="int" key="QtQuickCompiler">0</value>
+    <value type="int" key="RunSystemFunction">0</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
-    <value type="bool">true</value>
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/lee/build-Batch_Renamer-Desktop-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/lee/build-Batch_Renamer-Desktop-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -212,11 +189,6 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.BuildTargets"/>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">false</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments"></value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.OverrideMakeflags">false</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
@@ -227,11 +199,7 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.BuildTargets"/>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">true</value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
-      <value type="bool" key="Qt4ProjectManager.MakeStep.OverrideMakeflags">false</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
@@ -245,7 +213,8 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Profile</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
-    <value type="int" key="QtQuickCompiler">2</value>
+    <value type="int" key="QtQuickCompiler">0</value>
+    <value type="int" key="RunSystemFunction">0</value>
     <value type="int" key="SeparateDebugInfo">0</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.BuildConfigurationCount">3</value>
@@ -262,7 +231,6 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
-   <valuemap type="QVariantMap" key="ProjectExplorer.Target.PluginSettings"/>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
     <value type="QString" key="Analyzer.Perf.CallgraphMode">dwarf</value>
     <valuelist type="QVariantList" key="Analyzer.Perf.Events">
@@ -324,19 +292,14 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/lee/GitHub/Bionic-Batch-Renamer/Code/Batch_Renamer.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/lee/GitHub/Bionic-Batch-Renamer/Code/Batch_Renamer.pro</value>
-    <value type="QString" key="RunConfiguration.Arguments">&quot;/home/lee/SCRAP/.allextension&quot; &quot;/home/lee/SCRAP/noextension&quot; &quot;/home/lee/SCRAP/without a home.txt&quot; &quot;/home/lee/SCRAP/OH MY DAYS.txt&quot; &quot;/home/lee/SCRAP/this is the game.txt&quot; &quot;/home/lee/SCRAP/car2.jpg&quot;</value>
-    <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
-    <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/lee/GIT/Bionic-Batch-Renamer/Code/Batch_Renamer.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/lee/GIT/Bionic-Batch-Renamer/Code/Batch_Renamer.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
-    <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/lee/GitHub/Bionic-Batch-Renamer/Build/Release</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/lee/GIT/Bionic-Batch-Renamer/build-Batch_Renamer-Desktop-Release</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
