@@ -18,13 +18,19 @@ Interface heavily inspired by [Thunar's 'bulk renamer'](https://docs.xfce.org/xf
 
 - From Dolphin File Manager in KDE Plasma:
   
-  - From the Dolphin menu select 'Settings->Configure Dolphin->Context Menu->Download New Services' and search for 'Bionic Batch Renamer.' This will add the option 'Batch rename' to the right-click menu in the file manager when multiple files are selected.
+  - From the Dolphin menu select 'Settings->Configure Dolphin->Context Menu->Download New Services' and search for 'Bionic Batch Renamer.'
+    - Select the .deb file to install on Ubuntu and Debian based distros.
+    - Select the .tar file to install on Atch based distros.
+  This will add the option 'Batch rename' to the right-click menu in the file manager when multiple files are selected.
 
 - On Ubuntu and other Debian based Linux distributions:
-  
   - Double-click the .deb installation file and install via your package manager. The executable will be located at /usr/local/bin/Batch_Renamer.
+
+- On Arch based Linux distributions:
+  - Double-click the .deb installation file and install via your package manager. 
 
 #### Authors:
 
 - Lee Cooper
 - Heimen Stoffels (Dutch translation)
+- Carl F (Arch installer)
