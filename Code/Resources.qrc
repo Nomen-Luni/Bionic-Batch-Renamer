@@ -3,6 +3,7 @@
     <qresource>
         <file>Translations/Batch_Renamer_en_GB.qm</file>
         <file>Translations/Batch_Renamer_nl.qm</file>
+        <file>Translations/Batch_Renamer_de.qm</file>
     </qresource>
 </RCC>
 

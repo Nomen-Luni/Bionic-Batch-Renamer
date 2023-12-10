@@ -51,7 +51,8 @@ FORMS += \
     
 TRANSLATIONS = \
     Translations/Batch_Renamer_en_GB.ts \
-    Translations/Batch_Renamer_nl.ts
+    Translations/Batch_Renamer_nl.ts \
+    Translations/Batch_Renamer_de.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
