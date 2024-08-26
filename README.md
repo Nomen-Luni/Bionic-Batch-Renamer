@@ -27,7 +27,8 @@ Interface heavily inspired by [Thunar's 'bulk renamer'](https://docs.xfce.org/xf
   - Double-click the .deb installation file and install via your package manager. The executable will be located at /usr/local/bin/Batch_Renamer.
 
 - On Arch based Linux distributions:
-  - Double-click the .tar installation file and install via your package manager. 
+  - Double-click the .tar installation file and install via your package manager  
+    or use the [AUR package](https://aur.archlinux.org/packages/bionic-batch-renamer-git)
 
 #### Authors:
 
