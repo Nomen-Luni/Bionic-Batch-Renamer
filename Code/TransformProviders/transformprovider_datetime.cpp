@@ -3,7 +3,7 @@
 #include "MainWindow/mainwindow.h" //For signal connection
 #include <QDateTime>
 #include <QFileInfo>
-#include "KF5/KExiv2/kexiv2/kexiv2.h"
+#include "KExiv2Qt6/kexiv2/kexiv2.h"
 
 TransformProvider_dateTime::TransformProvider_dateTime(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor

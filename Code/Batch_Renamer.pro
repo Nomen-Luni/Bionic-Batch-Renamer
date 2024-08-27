@@ -8,7 +8,8 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-LIBS += -lKF5KExiv2
+LIBS += -lKExiv2Qt6
+#LIBS += -lKF5KExiv2
 
 SOURCES += \
     main.cpp \
@@ -48,6 +49,9 @@ FORMS += \
     TransformProviders/transformprovider_removechars.ui \
     TransformProviders/transformprovider_searchreplace.ui \
     AboutDialog/aboutdialog.ui
+
+# TODO: Had to include this to clear an error - is this the right way?
+INCLUDEPATH += /usr/include/KExiv2Qt6/
     
 TRANSLATIONS = \
     Translations/Batch_Renamer_en_GB.ts \

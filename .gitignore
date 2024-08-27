@@ -32,7 +32,10 @@
 *.app
 
 # Build directory
-Build/
+build/
+
+# Jetbrains solution folder
+.idea/
 
 # .debs
 *.deb
