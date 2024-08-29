@@ -106,7 +106,7 @@ bool TransformEngine::renameFiles()
     FileSystemOverlay fsOverlay;
     for (int index=0; index<sourceUrls.length(); index++)
     {
-        success=fsOverlay.RenameFile(sourceUrls[index],TargetUrls[index], true);
+        success=fsOverlay.renameFile(sourceUrls[index],TargetUrls[index], true);
         if (success==false) return false;
     }
 
