@@ -1,20 +1,20 @@
 #ifndef TRANSFORMPROVIDER_REMOVECHARS_H
 #define TRANSFORMPROVIDER_REMOVECHARS_H
 
-#include "transformprovider.h"
+#include "TransformProvider.h"
 #include <QWidget>
 #include <QStackedWidget>
 
 namespace Ui {
-class TransformProvider_removeChars;
+class TransformProvider_RemoveChars;
 }
 
-class TransformProvider_removeChars : public TransformProvider
+class TransformProvider_RemoveChars : public TransformProvider
 {
 public:
-    explicit TransformProvider_removeChars(QWidget *parent = nullptr);
-    ~TransformProvider_removeChars();
-    void UpdateGUIvars();
+    explicit TransformProvider_RemoveChars(QWidget *parent = nullptr);
+    ~TransformProvider_RemoveChars();
+    void updateGUIvars();
     QString transform(const QString& inFullUrl, const QString& in, int index, bool& success);
 
 private:
@@ -24,7 +24,7 @@ private:
         fromto_back
     };
 
-    Ui::TransformProvider_removeChars *ui;
+    Ui::TransformProvider_RemoveChars *ui;
 
     int fromChars;
     int toChars;

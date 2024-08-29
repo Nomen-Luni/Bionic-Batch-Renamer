@@ -13,42 +13,42 @@ LIBS += -lKExiv2Qt6
 
 SOURCES += \
     main.cpp \
-    MainWindow/mainwindow.cpp \
-    TransformEngine/transformengine.cpp \
-    TransformProviders/transformprovider.cpp \
-    TransformProviders/transformprovider_case.cpp \
-    TransformProviders/transformprovider_datetime.cpp \
-    TransformProviders/transformprovider_insertoverwrite.cpp \
-    TransformProviders/transformprovider_numbering.cpp \
-    TransformProviders/transformprovider_removechars.cpp \
-    TransformProviders/transformprovider_searchreplace.cpp \
-    AboutDialog/aboutdialog.cpp \
-    FileSystemOverlay/filesystemoverlay.cpp
+    MainWindow/MainWindow.cpp \
+    TransformEngine/TransformEngine.cpp \
+    TransformProviders/TransformProvider.cpp \
+    TransformProviders/TransformProvider_Case.cpp \
+    TransformProviders/TransformProvider_DateTime.cpp \
+    TransformProviders/TransformProvider_InsertOverwrite.cpp \
+    TransformProviders/TransformProvider_Numbering.cpp \
+    TransformProviders/TransformProvider_RemoveChars.cpp \
+    TransformProviders/TransformProvider_SearchReplace.cpp \
+    AboutDialog/AboutDialog.cpp \
+    FileSystemOverlay/FileSystemOverlay.cpp
     
 HEADERS += \
     version.h\
-    MainWindow/mainwindow.h \
-    TransformEngine/transformengine.h \
+    MainWindow/MainWindow.h \
+    TransformEngine/TransformEngine.h \
     TransformProviders/enum_transformScope.h \
-    TransformProviders/transformprovider.h \
-    TransformProviders/transformprovider_case.h \
-    TransformProviders/transformprovider_datetime.h \
-    TransformProviders/transformprovider_insertoverwrite.h \
-    TransformProviders/transformprovider_numbering.h \
-    TransformProviders/transformprovider_removechars.h \
-    TransformProviders/transformprovider_searchreplace.h \
-    AboutDialog/aboutdialog.h \
-    FileSystemOverlay/filesystemoverlay.h
+    TransformProviders/TransformProvider.h \
+    TransformProviders/TransformProvider_Case.h \
+    TransformProviders/TransformProvider_DateTime.h \
+    TransformProviders/TransformProvider_InsertOverwrite.h \
+    TransformProviders/TransformProvider_Numbering.h \
+    TransformProviders/TransformProvider_RemoveChars.h \
+    TransformProviders/TransformProvider_SearchReplace.h \
+    AboutDialog/AboutDialog.h \
+    FileSystemOverlay/FileSystemOverlay.h
     
 FORMS += \
-    MainWindow/mainwindow.ui \
-    TransformProviders/transformprovider_case.ui \
-    TransformProviders/transformprovider_datetime.ui \
-    TransformProviders/transformprovider_insertoverwrite.ui \
-    TransformProviders/transformprovider_numbering.ui \
-    TransformProviders/transformprovider_removechars.ui \
-    TransformProviders/transformprovider_searchreplace.ui \
-    AboutDialog/aboutdialog.ui
+    MainWindow/MainWindow.ui \
+    TransformProviders/TransformProvider_Case.ui \
+    TransformProviders/TransformProvider_DateTime.ui \
+    TransformProviders/TransformProvider_InsertOverwrite.ui \
+    TransformProviders/TransformProvider_Numbering.ui \
+    TransformProviders/TransformProvider_RemoveChars.ui \
+    TransformProviders/TransformProvider_SearchReplace.ui \
+    AboutDialog/AboutDialog.ui
 
 # TODO: Had to include this to clear an error - is this the right way?
 INCLUDEPATH += /usr/include/KExiv2Qt6/

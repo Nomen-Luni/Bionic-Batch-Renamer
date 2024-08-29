@@ -1,20 +1,20 @@
 #ifndef TRANSFORMPROVIDER_NUMBERING_H
 #define TRANSFORMPROVIDER_NUMBERING_H
 
-#include "transformprovider.h"
+#include "TransformProvider.h"
 #include <QWidget>
 #include <QStackedWidget>
 
 namespace Ui {
-class TransformProvider_numbering;
+class TransformProvider_Numbering;
 }
 
-class TransformProvider_numbering : public TransformProvider
+class TransformProvider_Numbering : public TransformProvider
 {
 public:
-    explicit TransformProvider_numbering(QWidget *parent = nullptr);
-    ~TransformProvider_numbering();
-    void UpdateGUIvars();
+    explicit TransformProvider_Numbering(QWidget *parent = nullptr);
+    ~TransformProvider_Numbering();
+    void updateGUIvars();
     QString transform(const QString& inFullUrl, const QString& in, int index, bool& success);
 
 private:
@@ -40,7 +40,7 @@ private:
         spaces
     };
 
-    Ui::TransformProvider_numbering *ui;
+    Ui::TransformProvider_Numbering *ui;
 
     //QString startWith;
     spacerTypes spacerType;

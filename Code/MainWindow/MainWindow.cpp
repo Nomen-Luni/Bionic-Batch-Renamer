@@ -1,16 +1,16 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
 #include <QFileDialog>
-#include "TransformEngine/transformengine.h"
-#include "AboutDialog/aboutdialog.h"
+#include "TransformEngine/TransformEngine.h"
+#include "AboutDialog/AboutDialog.h"
 
 //Transform providers
-#include "TransformProviders/transformprovider_case.h"
-#include "TransformProviders/transformprovider_removechars.h"
-#include "TransformProviders/transformprovider_numbering.h"
-#include "TransformProviders/transformprovider_insertoverwrite.h"
-#include "TransformProviders/transformprovider_searchreplace.h"
-#include "TransformProviders/transformprovider_datetime.h"
+#include "TransformProviders/TransformProvider_Case.h"
+#include "TransformProviders/TransformProvider_RemoveChars.h"
+#include "TransformProviders/TransformProvider_Numbering.h"
+#include "TransformProviders/TransformProvider_InsertOverwrite.h"
+#include "TransformProviders/TransformProvider_SearchReplace.h"
+#include "TransformProviders/TransformProvider_DateTime.h"
 
 MainWindow::MainWindow(QWidget *parent, QApplication* app)
     : QMainWindow(parent)
@@ -24,13 +24,12 @@ MainWindow::MainWindow(QWidget *parent, QApplication* app)
     auto tableNameHeader=ui->fileNamesTableWidget->horizontalHeader();
     connect(tableNameHeader, &QHeaderView::sectionClicked, this, &MainWindow::on_TableNameHeaderClicked);
 
-    AddProvider(new TransformProvider_case(this));
-    AddProvider(new TransformProvider_removeChars(this));
-    AddProvider(new TransformProvider_numbering(this));
-    AddProvider(new TransformProvider_insertOverwrite(this));
-    AddProvider(new TransformProvider_searchReplace(this));
-    AddProvider(new TransformProvider_dateTime(this));
-
+    addProvider(new TransformProvider_Case(this));
+    addProvider(new TransformProvider_RemoveChars(this));
+    addProvider(new TransformProvider_Numbering(this));
+    addProvider(new TransformProvider_InsertOverwrite(this));
+    addProvider(new TransformProvider_SearchReplace(this));
+    addProvider(new TransformProvider_DateTime(this));
 }
 
 MainWindow::~MainWindow()
@@ -38,24 +37,24 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::AddProvider(TransformProvider* provider)
+void MainWindow::addProvider(TransformProvider* provider)
 {
-    TransformEngine::AddProvider(provider);
+    TransformEngine::addProvider(provider);
     ui->TransformPagesStackedWidget->addWidget(provider);
     ui->operationComboBox->addItem(provider->displayName);
 }
 
 void MainWindow::on_operationComboBox_currentIndexChanged(int index)
 {
-    TransformEngine::SelectProvider(index);
+    TransformEngine::selectProvider(index);
     ui->TransformPagesStackedWidget->setCurrentIndex(index);
-    transformChanged();
+    doTransforms();
 }
 
 void MainWindow::updateFileNamesTable()
 {
-    QStringList* sourcefiles=TransformEngine::GetSourceFileNamesListPtr();
-    QStringList* targetfiles=TransformEngine::GetTargetFileNamesListPtr();
+    QStringList* sourcefiles=TransformEngine::getSourceFileNamesListPtr();
+    QStringList* targetfiles=TransformEngine::getTargetFileNamesListPtr();
 
     ui->fileNamesTableWidget->clearContents();
     ui->fileNamesTableWidget->setRowCount(sourcefiles->count());
@@ -74,17 +73,17 @@ void MainWindow::updateFileNamesTable()
     }
 }
 
-void MainWindow::transformChanged()
+void MainWindow::doTransforms()
 {
-    TransformEngine::DoTransform();
+    TransformEngine::doTransform();
     updateFileNamesTable();
 }
 
 void MainWindow::on_AddPushButton_clicked()
 {
     auto fileNames = QFileDialog::getOpenFileNames(this, QFileDialog::tr("Select files to add"),"~","All Files (*.*)");
-    TransformEngine::AddSourceUrls(fileNames);
-    transformChanged();
+    TransformEngine::addSourceUrls(fileNames);
+    doTransforms();
 }
 
 void MainWindow::on_RemovePushButton_clicked()
@@ -95,20 +94,20 @@ void MainWindow::on_RemovePushButton_clicked()
     for (auto index = indexList.crbegin(); index != indexList.crend(); index++)
     {
         row = (*index).row();
-        TransformEngine::RemoveSourceUrl(row);
+        TransformEngine::removeSourceUrl(row);
     }
-    transformChanged();
+    doTransforms();
 }
 
 void MainWindow::on_clearPushButton_clicked()
 {
-    TransformEngine::ClearSourceUrls();
+    TransformEngine::clearSourceUrls();
     ui->fileNamesTableWidget->clearContents();
 }
 
 void MainWindow::on_renamePushButton_clicked()
 {
-    TransformEngine::RenameFiles();
+    TransformEngine::renameFiles();
     updateFileNamesTable();
 }
 
@@ -121,8 +120,8 @@ void MainWindow::on_aboutButton_clicked()
 void MainWindow::on_targetComboBox_currentIndexChanged(int index)
 {
     (void)index;
-    TransformEngine::SelectScope((transformScope)index);
-    transformChanged();
+    TransformEngine::selectScope((transformScope)index);
+    doTransforms();
 }
 
 void MainWindow::on_TableNameHeaderClicked(int index)
@@ -132,14 +131,14 @@ void MainWindow::on_TableNameHeaderClicked(int index)
         auto val=ui->fileNamesTableWidget->horizontalHeader()->sortIndicatorOrder();
         if (val==Qt::SortOrder::AscendingOrder)
         {
-            TransformEngine::SortSourceUrls(false);
+            TransformEngine::sortSourceUrls(false);
         }
         else
         {
-            TransformEngine::SortSourceUrls(true);
+            TransformEngine::sortSourceUrls(true);
         }
         //Quick but slightly dirty way of reordering target filename list and updating table...
-        transformChanged();
+        doTransforms();
     }
 }
 

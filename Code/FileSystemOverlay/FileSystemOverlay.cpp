@@ -1,4 +1,4 @@
-#include "filesystemoverlay.h"
+#include "FileSystemOverlay.h"
 #include <QFile>
 
 FileSystemOverlay::FileSystemOverlay()

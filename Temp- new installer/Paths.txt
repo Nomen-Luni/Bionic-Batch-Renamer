@@ -1,0 +1,10 @@
+Plasma 6:
+
+Local:
+~/.local/share/kio/servicemenus/
+~/.local/share/applications/
+
+Systemwide:
+/usr/share/kio/servicemenus/
+/usr/share/applications/
+

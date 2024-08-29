@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Service
+MimeType=all/all;
+Actions=BatchRename;
+X-KDE-StartupNotify=false
+X-KDE-Priority=TopLevel
+X-KDE-MinNumberOfUrls=2
+Icon=edit-rename
+
+[Desktop Action BatchRename]
+Name=Batch Rename
+Name[nl]=Reeks Hernoemen
+Exec=Batch_Renamer %U
+Icon=edit-rename

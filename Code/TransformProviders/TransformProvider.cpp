@@ -1,4 +1,4 @@
-#include "transformprovider.h"
+#include "TransformProvider.h"
 
 bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStringList& in, QStringList& out, transformScope scope)
 {
@@ -9,7 +9,7 @@ bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStr
 
     int index=0;
 
-    UpdateGUIvars();
+    updateGUIvars();
     QString fileNameOnly;
     QString extensionOnly;
     bool splitFound;
@@ -21,7 +21,7 @@ bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStr
                 transformed=transform(inFullUrls[index],str, index, successOne);
             break;
             case name_only:
-                splitFound=SplitFileName(str,fileNameOnly,extensionOnly);
+                splitFound=splitFileName(str,fileNameOnly,extensionOnly);
                 transformed=transform(inFullUrls[index],fileNameOnly, index, successOne);
                 if (splitFound)
                 {
@@ -29,7 +29,7 @@ bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStr
                 }
             break;
             case extension_only:
-                splitFound=SplitFileName(str,fileNameOnly,extensionOnly);
+                splitFound=splitFileName(str,fileNameOnly,extensionOnly);
                 if (splitFound)
                 {
                     transformed=transform(inFullUrls[index],extensionOnly, index, successOne);
@@ -53,7 +53,7 @@ bool TransformProvider::transformMulti(const QStringList& inFullUrls, const QStr
     return successAll;
 }
 
-bool TransformProvider::SplitFileName(const QString& fullFileName, QString& filename, QString& extension, bool greedyExtension)
+bool TransformProvider::splitFileName(const QString& fullFileName, QString& filename, QString& extension, bool greedyExtension)
 {
     int offset;
     if (greedyExtension)

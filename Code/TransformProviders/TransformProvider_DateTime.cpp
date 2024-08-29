@@ -1,33 +1,33 @@
-#include "transformprovider_datetime.h"
-#include "ui_transformprovider_datetime.h"
-#include "MainWindow/mainwindow.h" //For signal connection
+#include "TransformProvider_DateTime.h"
+#include "ui_TransformProvider_DateTime.h"
+#include "MainWindow/MainWindow.h" //For signal connection
 #include <QDateTime>
 #include <QFileInfo>
 #include "KExiv2Qt6/kexiv2/kexiv2.h"
 
-TransformProvider_dateTime::TransformProvider_dateTime(QWidget *parent)
+TransformProvider_DateTime::TransformProvider_DateTime(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor
-    , ui(new Ui::TransformProvider_dateTime)
+    , ui(new Ui::TransformProvider_DateTime)
 {
     ui->setupUi(this);
     displayName=QObject::tr("Date Time");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
-    connect(ui->atPositionSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->dateSelectComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->formatLineEdit,&QLineEdit::textEdited,(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->fromComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);
+    connect(ui->atPositionSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->dateSelectComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->formatLineEdit,&QLineEdit::textEdited,(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->fromComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::doTransforms);
 
     if (KExiv2Iface::KExiv2::initializeExiv2()==false) displayName="Problem";
 }
 
-TransformProvider_dateTime::~TransformProvider_dateTime()
+TransformProvider_DateTime::~TransformProvider_DateTime()
 {
     KExiv2Iface::KExiv2::cleanupExiv2();
     delete ui;
 }
 
-void TransformProvider_dateTime::UpdateGUIvars()
+void TransformProvider_DateTime::updateGUIvars()
 {
     atPosition=ui->atPositionSpinBox->value();
     dateSelect=(dateSelections)ui->dateSelectComboBox->currentIndex();
@@ -35,7 +35,7 @@ void TransformProvider_dateTime::UpdateGUIvars()
     from=(fromLocations)ui->fromComboBox->currentIndex();
 }
 
-QString TransformProvider_dateTime::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
+QString TransformProvider_DateTime::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
 {
     QString transformed;
     (void)index;

@@ -114,7 +114,7 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
-    <name>TransformProvider_case</name>
+    <name>TransformProvider_Case</name>
     <message>
         <location filename="../TransformProviders/transformprovider_case.ui" line="20"/>
         <source>Form</source>
@@ -147,7 +147,7 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
-    <name>TransformProvider_dateTime</name>
+    <name>TransformProvider_DateTime</name>
     <message>
         <location filename="../TransformProviders/transformprovider_datetime.ui" line="14"/>
         <source>Form</source>
@@ -210,7 +210,7 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
-    <name>TransformProvider_insertOverwrite</name>
+    <name>TransformProvider_InsertOverwrite</name>
     <message>
         <location filename="../TransformProviders/transformprovider_insertoverwrite.ui" line="14"/>
         <source>Form</source>
@@ -248,7 +248,7 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
-    <name>TransformProvider_numbering</name>
+    <name>TransformProvider_Numbering</name>
     <message>
         <location filename="../TransformProviders/transformprovider_numbering.ui" line="26"/>
         <source>Form</source>
@@ -327,7 +327,7 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
-    <name>TransformProvider_removeChars</name>
+    <name>TransformProvider_RemoveChars</name>
     <message>
         <location filename="../TransformProviders/transformprovider_removechars.ui" line="26"/>
         <source>Form</source>
@@ -357,7 +357,7 @@ Controleer of u schrijfrechten hebt tot alle bestanden.</translation>
     </message>
 </context>
 <context>
-    <name>TransformProvider_searchReplace</name>
+    <name>TransformProvider_SearchReplace</name>
     <message>
         <location filename="../TransformProviders/transformprovider_searchreplace.ui" line="14"/>
         <source>Form</source>

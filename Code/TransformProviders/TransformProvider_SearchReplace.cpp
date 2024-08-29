@@ -1,28 +1,28 @@
-#include "transformprovider_searchreplace.h"
-#include "ui_transformprovider_searchreplace.h"
-#include "MainWindow/mainwindow.h" //For signal connection
+#include "TransformProvider_SearchReplace.h"
+#include "ui_TransformProvider_SearchReplace.h"
+#include "MainWindow/MainWindow.h" //For signal connection
 #include <QRegularExpression>
 
-TransformProvider_searchReplace::TransformProvider_searchReplace(QWidget *parent)
+TransformProvider_SearchReplace::TransformProvider_SearchReplace(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor
-    , ui(new Ui::TransformProvider_searchReplace)
+    , ui(new Ui::TransformProvider_SearchReplace)
 {
     ui->setupUi(this);
     displayName=QObject::tr("Search & Replace");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
-    connect(ui->caseSensitiveSearchCheckBox,&QCheckBox::toggled,(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->regularExpressionCheckBox,&QCheckBox::toggled,(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->replaceWithLineEdit,&QLineEdit::textEdited,(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->searchForLineEdit,&QLineEdit::textEdited,(MainWindow*)parent, &MainWindow::transformChanged);
+    connect(ui->caseSensitiveSearchCheckBox,&QCheckBox::toggled,(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->regularExpressionCheckBox,&QCheckBox::toggled,(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->replaceWithLineEdit,&QLineEdit::textEdited,(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->searchForLineEdit,&QLineEdit::textEdited,(MainWindow*)parent, &MainWindow::doTransforms);
 }
 
-TransformProvider_searchReplace::~TransformProvider_searchReplace()
+TransformProvider_SearchReplace::~TransformProvider_SearchReplace()
 {
     delete ui;
 }
 
-void TransformProvider_searchReplace::UpdateGUIvars()
+void TransformProvider_SearchReplace::updateGUIvars()
 {
     caseSensitiveSearch=ui->caseSensitiveSearchCheckBox->isChecked();
     regularExpression=ui->regularExpressionCheckBox->isChecked();
@@ -30,7 +30,7 @@ void TransformProvider_searchReplace::UpdateGUIvars()
     searchFor= ui->searchForLineEdit->text();
 }
 
-QString TransformProvider_searchReplace::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
+QString TransformProvider_SearchReplace::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
 {
     QString transformed=in;
     (void)inFullUrl;

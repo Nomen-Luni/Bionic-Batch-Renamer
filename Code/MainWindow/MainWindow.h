@@ -3,7 +3,7 @@
 
 #include <QApplication>
 #include <QMainWindow>
-#include "TransformProviders/transformprovider.h"
+#include "TransformProviders/TransformProvider.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,7 +19,7 @@ public:
     //static void transformChangedCallbackUsingInstancePtr(void * instance, int arg);
 
 public slots:
-    void transformChanged();
+    void doTransforms();
 
 private slots:
     void on_operationComboBox_currentIndexChanged(int index);
@@ -32,7 +32,7 @@ private slots:
     void on_TableNameHeaderClicked(int column);
 
 private:
-    void AddProvider(TransformProvider* provider);
+    void addProvider(TransformProvider* provider);
     Ui::MainWindow *ui;
     void updateFileNamesTable();
 };

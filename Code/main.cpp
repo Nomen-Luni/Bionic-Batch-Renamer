@@ -1,9 +1,9 @@
-#include "MainWindow/mainwindow.h"
+#include "MainWindow/MainWindow.h"
 #include <QApplication>
 #include <QLocale>
 #include <QMessageBox>
 #include <QTranslator>
-#include "TransformEngine/transformengine.h"
+#include "TransformEngine/TransformEngine.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,10 +16,10 @@ int main(int argc, char *argv[])
         app.installTranslator(&translator);
     }
 
-    QStringList FileNames=app.arguments();
-    FileNames.removeFirst();
+    QStringList commandLineUrls=app.arguments();
+    commandLineUrls.removeFirst();    //First argument is executable name, discard it
 
-    bool filesOkay=TransformEngine::AddSourceUrls(FileNames);
+    bool filesOkay=TransformEngine::addSourceUrls(commandLineUrls);
     if (filesOkay==false)
     {
         QMessageBox msg;

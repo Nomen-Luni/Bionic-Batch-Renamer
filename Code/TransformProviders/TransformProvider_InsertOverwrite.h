@@ -1,20 +1,20 @@
 #ifndef TRANSFORMPROVIDER_INSERTOVERWRITE_H
 #define TRANSFORMPROVIDER_INSERTOVERWRITE_H
 
-#include "transformprovider.h"
+#include "TransformProvider.h"
 #include <QWidget>
 #include <QStackedWidget>
 
 namespace Ui {
-class TransformProvider_insertOverwrite;
+class TransformProvider_InsertOverwrite;
 }
 
-class TransformProvider_insertOverwrite : public TransformProvider
+class TransformProvider_InsertOverwrite : public TransformProvider
 {
 public:
-    explicit TransformProvider_insertOverwrite(QWidget *parent = nullptr);
-    ~TransformProvider_insertOverwrite();
-    void UpdateGUIvars();
+    explicit TransformProvider_InsertOverwrite(QWidget *parent = nullptr);
+    ~TransformProvider_InsertOverwrite();
+    void updateGUIvars();
     QString transform(const QString& inFullUrl, const QString& in, int index, bool& success);
 
 private:
@@ -29,7 +29,7 @@ private:
         overwrite
     };
 
-    Ui::TransformProvider_insertOverwrite *ui;
+    Ui::TransformProvider_InsertOverwrite *ui;
 
     fromLocations from;
     modes mode;

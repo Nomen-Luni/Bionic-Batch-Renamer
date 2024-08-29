@@ -1,28 +1,28 @@
-#include "transformprovider_numbering.h"
-#include "ui_transformprovider_numbering.h"
-#include "MainWindow/mainwindow.h" //For signal connection
+#include "TransformProvider_Numbering.h"
+#include "ui_TransformProvider_Numbering.h"
+#include "MainWindow/MainWindow.h" //For signal connection
 
-TransformProvider_numbering::TransformProvider_numbering(QWidget *parent)
+TransformProvider_Numbering::TransformProvider_Numbering(QWidget *parent)
     : TransformProvider(parent) //QWidget constructor called via TransformProvider constructor
-    , ui(new Ui::TransformProvider_numbering)
+    , ui(new Ui::TransformProvider_Numbering)
 {
     ui->setupUi(this);
     displayName=QObject::tr("Numbering");
 
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
-    connect(ui->startNumberSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->spacerComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->padCharacterComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->padWidthSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::transformChanged);
-    connect(ui->locationComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::transformChanged);
+    connect(ui->startNumberSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->spacerComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->padCharacterComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->padWidthSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::doTransforms);
+    connect(ui->locationComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::doTransforms);
 }
 
-TransformProvider_numbering::~TransformProvider_numbering()
+TransformProvider_Numbering::~TransformProvider_Numbering()
 {
     delete ui;
 }
 
-void TransformProvider_numbering::UpdateGUIvars()
+void TransformProvider_Numbering::updateGUIvars()
 {
     spacerType=(spacerTypes)ui->spacerComboBox->currentIndex();
     padCharacterType=(padCharacterTypes)ui->padCharacterComboBox->currentIndex();
@@ -31,7 +31,7 @@ void TransformProvider_numbering::UpdateGUIvars()
     location=(locationTypes)ui->locationComboBox->currentIndex();
 }
 
-QString TransformProvider_numbering::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
+QString TransformProvider_Numbering::transform(const QString& inFullUrl, const QString& in, int index, bool& success)
 {
     QString transformed;
     QString numberString;

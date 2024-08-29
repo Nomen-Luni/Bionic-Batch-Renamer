@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TransformProvider_case</class>
- <widget class="QWidget" name="TransformProvider_case">
+ <class>TransformProvider_Case</class>
+ <widget class="QWidget" name="TransformProvider_Case">
   <property name="geometry">
    <rect>
     <x>0</x>

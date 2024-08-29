@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TransformProvider_insertOverwrite</class>
- <widget class="QWidget" name="TransformProvider_insertOverwrite">
+ <class>TransformProvider_InsertOverwrite</class>
+ <widget class="QWidget" name="TransformProvider_InsertOverwrite">
   <property name="geometry">
    <rect>
     <x>0</x>

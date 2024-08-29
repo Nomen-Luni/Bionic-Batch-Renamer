@@ -1,24 +1,24 @@
 #ifndef TRANSFORMPROVIDER_SEARCHREPLACE_H
 #define TRANSFORMPROVIDER_SEARCHREPLACE_H
 
-#include "transformprovider.h"
+#include "TransformProvider.h"
 #include <QWidget>
 #include <QStackedWidget>
 
 namespace Ui {
-class TransformProvider_searchReplace;
+class TransformProvider_SearchReplace;
 }
 
-class TransformProvider_searchReplace : public TransformProvider
+class TransformProvider_SearchReplace : public TransformProvider
 {
 public:
-    explicit TransformProvider_searchReplace(QWidget *parent = nullptr);
-    ~TransformProvider_searchReplace();
-    void UpdateGUIvars();
+    explicit TransformProvider_SearchReplace(QWidget *parent = nullptr);
+    ~TransformProvider_SearchReplace();
+    void updateGUIvars();
     QString transform(const QString& inFullUrl, const QString& in, int index, bool& success);
 
 private:
-    Ui::TransformProvider_searchReplace *ui;
+    Ui::TransformProvider_SearchReplace *ui;
 
     bool caseSensitiveSearch;
     bool regularExpression;
