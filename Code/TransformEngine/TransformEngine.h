@@ -8,8 +8,8 @@
 class TransformEngine
 {
 public:
-    static QStringList* getSourceFileNamesListPtr();
-    static QStringList* getTargetFileNamesListPtr();
+    static QStringList getSourceFileNamesList();
+    static QStringList getTargetFileNamesList();
     static bool addSourceUrls(QStringList urls);
     static bool removeSourceUrl(int index);
     static void clearSourceUrls();

@@ -14,14 +14,14 @@ QStringList TransformEngine::targetFileNames;
 QStringList TransformEngine::sourceUrls;
 //
 
-QStringList* TransformEngine::getSourceFileNamesListPtr()
+QStringList TransformEngine::getSourceFileNamesList()
 {
-    return &sourceFileNames;
+    return sourceFileNames;
 }
 
-QStringList* TransformEngine::getTargetFileNamesListPtr()
+QStringList TransformEngine::getTargetFileNamesList()
 {
-    return &targetFileNames;
+    return targetFileNames;
 }
 
 bool TransformEngine::addSourceUrls(QStringList urls)

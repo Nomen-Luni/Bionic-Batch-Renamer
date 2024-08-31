@@ -53,20 +53,20 @@ void MainWindow::on_operationComboBox_currentIndexChanged(int index)
 
 void MainWindow::updateFileNamesTable()
 {
-    QStringList* sourcefiles=TransformEngine::getSourceFileNamesListPtr();
-    QStringList* targetfiles=TransformEngine::getTargetFileNamesListPtr();
+    QStringList sourcefiles=TransformEngine::getSourceFileNamesList();
+    QStringList targetfiles=TransformEngine::getTargetFileNamesList();
 
     ui->fileNamesTableWidget->clearContents();
-    ui->fileNamesTableWidget->setRowCount(sourcefiles->count());
+    ui->fileNamesTableWidget->setRowCount(sourcefiles.count());
 
     int row=0;
-    foreach (QString string, *sourcefiles)
+    foreach (QString string, sourcefiles)
     {
         ui->fileNamesTableWidget->setItem(row,0,new QTableWidgetItem(string));
         row++;
     }
     row=0;
-    foreach (QString string, *targetfiles)
+    foreach (QString string, targetfiles)
     {
         ui->fileNamesTableWidget->setItem(row,1,new QTableWidgetItem(string));
         row++;
