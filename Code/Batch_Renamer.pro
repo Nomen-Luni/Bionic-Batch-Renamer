@@ -9,7 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 LIBS += -lKExiv2Qt6
-#LIBS += -lKF5KExiv2
 
 SOURCES += \
     main.cpp \
@@ -23,6 +22,7 @@ SOURCES += \
     TransformProviders/TransformProvider_RemoveChars.cpp \
     TransformProviders/TransformProvider_SearchReplace.cpp \
     AboutDialog/AboutDialog.cpp \
+    FileOperation/FileOperation.cpp \
     FileSystemOverlay/FileSystemOverlay.cpp
     
 HEADERS += \
@@ -38,6 +38,7 @@ HEADERS += \
     TransformProviders/TransformProvider_RemoveChars.h \
     TransformProviders/TransformProvider_SearchReplace.h \
     AboutDialog/AboutDialog.h \
+    FileOperation/FileOperation.h \
     FileSystemOverlay/FileSystemOverlay.h
     
 FORMS += \

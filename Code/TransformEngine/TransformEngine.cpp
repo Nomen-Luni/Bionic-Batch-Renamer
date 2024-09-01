@@ -1,5 +1,6 @@
 #include "TransformEngine.h"
 #include "./FileSystemOverlay/FileSystemOverlay.h"
+#include "./FileOperation/FileOperation.h"
 #include <QFileInfo>
 #include <QFile>
 #include <algorithm>
@@ -9,50 +10,60 @@ int TransformEngine::numProviders=0;
 int TransformEngine::selectedProviderIndex=0;
 transformScope TransformEngine::scope;
 TransformProvider* TransformEngine::transformProviders[maxTransformProviders];
-QStringList TransformEngine::sourceFileNames;
-QStringList TransformEngine::targetFileNames;
-QStringList TransformEngine::sourceUrls;
+QStringList TransformEngine::sourceFileNamesList;
+QStringList TransformEngine::targetFileNamesList;
+QStringList TransformEngine::sourceUrlsList;
 //
 
 QStringList TransformEngine::getSourceFileNamesList()
 {
-    return sourceFileNames;
+    return sourceFileNamesList;
 }
 
 QStringList TransformEngine::getTargetFileNamesList()
 {
-    return targetFileNames;
+    return targetFileNamesList;
 }
 
-bool TransformEngine::addSourceUrls(QStringList urls)
+QString TransformEngine::addSourceUrls(QStringList urls)
 {
     QFileInfo fileInfo;
+    QString errorStr=FileOperation::urlsUnique(urls);
+    if (errorStr!="")
+        return QObject::tr("Selected URLs not added:\nSelected URLs contained duplicates.");
+
+    errorStr=FileOperation::urlsWriteable(urls);
+    if (errorStr!="")
+        return QObject::tr("Selected URLs not added:\nEnsure user has write access to all selected files and directories.");
+
+    QList<QString> combinedUrlsList(sourceUrlsList);
+    combinedUrlsList.append(urls);
+
+    errorStr=FileOperation::urlsUnique(combinedUrlsList);
+    if (errorStr!="")
+        return QObject::tr("Selected URLs not added:\nCannot re-add urls that have previously been added.");
+
+    sourceUrlsList.append(urls);
     foreach (QString url, urls)
     {
         fileInfo.setFile(url);
-        if (fileInfo.isWritable()==false) return false;
+        sourceFileNamesList.push_back(fileInfo.fileName());
     }
-    sourceUrls.append(urls);
-    foreach (QString url, urls)
-    {
-        fileInfo.setFile(url);
-        sourceFileNames.push_back(fileInfo.fileName());
-    }
-    return true;
+    return "";
 }
 
 bool TransformEngine::removeSourceUrl(int index)
 {
-    sourceUrls.removeAt(index);
-    sourceFileNames.removeAt(index);
+    sourceUrlsList.removeAt(index);
+    sourceFileNamesList.removeAt(index);
     return true;
 }
 
 void TransformEngine::clearSourceUrls()
 {
-    sourceUrls.clear();
-    sourceFileNames.clear();
-    targetFileNames.clear();
+    sourceUrlsList.clear();
+    sourceFileNamesList.clear();
+    targetFileNamesList.clear();
 }
 
 int TransformEngine::addProvider(TransformProvider* provider)
@@ -79,19 +90,19 @@ int TransformEngine::selectScope(transformScope scope)
 
 void TransformEngine::doTransform()
 {
-    targetFileNames.clear();
+    targetFileNamesList.clear();
     auto provider=transformProviders[selectedProviderIndex];
-    provider->transformMulti(sourceUrls, sourceFileNames, targetFileNames, scope);
+    provider->transformMulti(sourceUrlsList, sourceFileNamesList, targetFileNamesList, scope);
 }
 
 QStringList TransformEngine::createTargetUrls()
 {
     QStringList targetUrls;
     QFileInfo fileInfo;
-    for (int index=0; index<sourceUrls.length(); index++)
+    for (int index=0; index<sourceUrlsList.length(); index++)
     {
-        fileInfo.setFile(sourceUrls[index]);
-        QString targetUrl=fileInfo.absolutePath()+"/"+targetFileNames[index];
+        fileInfo.setFile(sourceUrlsList[index]);
+        QString targetUrl=fileInfo.absolutePath()+"/"+targetFileNamesList[index];
         targetUrls.append(targetUrl);
     }
     return targetUrls;
@@ -104,30 +115,30 @@ bool TransformEngine::renameFiles()
 
     //Test renames virtually before moving any files - identifies name clashes and illegal file names
     FileSystemOverlay fsOverlay;
-    for (int index=0; index<sourceUrls.length(); index++)
+    for (int index=0; index<sourceUrlsList.length(); index++)
     {
-        success=fsOverlay.renameFile(sourceUrls[index],TargetUrls[index], true);
+        success=fsOverlay.renameFile(sourceUrlsList[index],TargetUrls[index], true);
         if (success==false) return false;
     }
 
-    for (int index=0; index<sourceUrls.length(); index++)
+    for (int index=0; index<sourceUrlsList.length(); index++)
     {
-        QFile sourcefile(sourceUrls[index]);
-        if (sourceUrls[index]==TargetUrls[index]) continue; //No change to filename
+        QFile sourcefile(sourceUrlsList[index]);
+        if (sourceUrlsList[index]==TargetUrls[index]) continue; //No change to filename
         success=sourcefile.rename(TargetUrls[index]);
         if (success==false) return false;
     }
 
     //Update our stored source file names to match the renamed file names
-    sourceUrls.clear();
-    sourceFileNames.clear();
+    sourceUrlsList.clear();
+    sourceFileNamesList.clear();
     foreach (QString targetUrl,TargetUrls)
     {
-        sourceUrls.append(targetUrl);
+        sourceUrlsList.append(targetUrl);
     }
-    foreach (QString targetFileName,targetFileNames)
+    foreach (QString targetFileName,targetFileNamesList)
     {
-        sourceFileNames.append(targetFileName);
+        sourceFileNamesList.append(targetFileName);
     }
 
     return true;
@@ -137,18 +148,18 @@ bool TransformEngine::sortSourceUrls(bool reverseAlphabetical)
 {
     QFileInfo fileInfo;
 
-    sourceUrls.sort(Qt::CaseInsensitive);  //Sorts alphabetically
+    sourceUrlsList.sort(Qt::CaseInsensitive);  //Sorts alphabetically
     if (reverseAlphabetical)
     {
-        std::reverse(sourceUrls.begin(), sourceUrls.end());
+        std::reverse(sourceUrlsList.begin(), sourceUrlsList.end());
     }
 
     //Now update the source and target filenames
-    sourceFileNames.clear();
-    foreach (QString url, sourceUrls)
+    sourceFileNamesList.clear();
+    foreach (QString url, sourceUrlsList)
     {
         fileInfo.setFile(url);
-        sourceFileNames.push_back(fileInfo.fileName());
+        sourceFileNamesList.push_back(fileInfo.fileName());
     }
     return true;
 }

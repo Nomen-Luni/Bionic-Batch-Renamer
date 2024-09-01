@@ -19,11 +19,11 @@ int main(int argc, char *argv[])
     QStringList commandLineUrls=app.arguments();
     commandLineUrls.removeFirst();    //First argument is executable name, discard it
 
-    bool filesOkay=TransformEngine::addSourceUrls(commandLineUrls);
-    if (filesOkay==false)
+    QString error=TransformEngine::addSourceUrls(commandLineUrls);
+    if (error!="")
     {
         QMessageBox msg;
-        msg.setText(QMessageBox::tr("Problem with selected files.\nCheck you have write permission for all files."));
+        msg.setText(error);
         msg.exec();
         return 1;
     }

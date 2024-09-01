@@ -10,7 +10,7 @@ class TransformEngine
 public:
     static QStringList getSourceFileNamesList();
     static QStringList getTargetFileNamesList();
-    static bool addSourceUrls(QStringList urls);
+    static QString addSourceUrls(QStringList urls);
     static bool removeSourceUrl(int index);
     static void clearSourceUrls();
     static int addProvider(TransformProvider* provider);
@@ -28,9 +28,9 @@ private:
     static int selectedProviderIndex;
     static transformScope scope;
     static TransformProvider* transformProviders[maxTransformProviders];
-    static QStringList sourceFileNames;
-    static QStringList targetFileNames;
-    static QStringList sourceUrls;
+    static QStringList sourceFileNamesList;
+    static QStringList targetFileNamesList;
+    static QStringList sourceUrlsList;
 };
 
 #endif // TRANSFORMENGINE_H
