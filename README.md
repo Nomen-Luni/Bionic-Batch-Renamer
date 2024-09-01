@@ -1,3 +1,5 @@
+# *I AM ACTIVLY DEVELOPING ON THE MAIN BRANCH (naughty!) - use the last tagged version if you want functional code (i.e. current built release)*
+
 # Bionic Batch Renamer
 
 A powerful batch file renaming utility built with the Qt technology stack.
