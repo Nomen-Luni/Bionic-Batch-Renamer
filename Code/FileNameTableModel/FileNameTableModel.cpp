@@ -1,4 +1,5 @@
 #include "FileNameTableModel.h"
+#include "../TransformEngine/TransformEngine.h"
 
 FileNameTableModel::FileNameTableModel(QObject *parent)
     : QAbstractTableModel(parent)
@@ -58,35 +59,12 @@ void FileNameTableModel::setFileNames(QStringList sourceFileNames, QStringList t
     this->sourceFileNames = sourceFileNames;
     this->targetFileNames = targetFileNames;
     endResetModel();
-    /*
-    if (sourceFileNames.length()>0)
-    {
-        QModelIndex topLeft = createIndex(0,0);
-        QModelIndex bottomRight = createIndex(1,sourceFileNames.length()-1);
-        // emit a signal to make the view reread identified data
-        emit dataChanged(topLeft, bottomRight, {Qt::DisplayRole});
-    }
-    */
 }
-
-/*
-void FileNameTableModel::dropEvent(QDropEvent *event)
-{
-    never called
-}
-*/
 
 Qt::DropActions FileNameTableModel::supportedDropActions() const
 {
     return Qt::CopyAction | Qt::MoveAction;
 }
-
-/*
-bool FileNameTableModel::canDropMimeData(const QMimeData* data, Qt::DropAction action, int row, int col, const QModelIndex& parent) const
-{
-    return true; // just for simplicity
-}
-*/
 
 bool FileNameTableModel::moveRows(const QModelIndex& parent1, int source_first, int source_last, const QModelIndex& parent2, int dest)
 {
@@ -95,13 +73,6 @@ bool FileNameTableModel::moveRows(const QModelIndex& parent1, int source_first, 
     //beginMoveRows(parent1, source_first, source_last, parent2, dest);
 
     beginResetModel();
-
-    //auto before=this->sourceFileNames.sliced(0, source_first - 1);
-    //auto toMove=this->sourceFileNames.sliced(source_first, source_last - source_first+ 1);
-    //auto after=
-
-    //this->sourceFileNames[0]=this->sourceFileNames[1];
-    //this->sourceFileNames[1]=rem;
 
     /*
     this->sourceFileNames.clear();
@@ -117,9 +88,23 @@ bool FileNameTableModel::moveRows(const QModelIndex& parent1, int source_first, 
            );
     */
 
+    // Re-order source file names list
     auto sourceVal=this->sourceFileNames[source_first];
     this->sourceFileNames.removeAt(source_first);
     this->sourceFileNames.insert(dest,sourceVal);
+
+    if (TransformEngine::transformIsOrderDependent())
+    {
+        TransformEngine::doTransform();
+        this->targetFileNames=TransformEngine::getTargetFileNamesList();
+    }
+    else
+    {
+        // Re-order target file names list
+        sourceVal=this->targetFileNames[source_first];
+        this->targetFileNames.removeAt(source_first);
+        this->targetFileNames.insert(dest,sourceVal);
+    }
 
     /*
     qDebug("%s:%s:%s:%s:%s:%s",
@@ -133,12 +118,6 @@ bool FileNameTableModel::moveRows(const QModelIndex& parent1, int source_first, 
     */
 
     endResetModel();
-
-    //rem=this->targetFileNames[0];
-    //this->targetFileNames[0]=this->targetFileNames[1];
-    //this->targetFileNames[1]=rem;
-
-    //endMoveRows();
 
     return true;
 }

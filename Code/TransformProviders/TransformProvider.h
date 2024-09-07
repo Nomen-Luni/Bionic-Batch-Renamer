@@ -16,6 +16,7 @@ public:
     explicit TransformProvider(QWidget* parent = nullptr):QWidget(parent){}
     QString displayName;
     bool transformMulti(const QStringList& inFullUrls, const QStringList& in, QStringList& out, transformScope txScope);
+    bool transformIsOrderDependent=false;
 private:
     virtual QString transform(const QString& inFullUrl, const QString& in, int index, bool& success) = 0;
     virtual void updateGUIvars() = 0;

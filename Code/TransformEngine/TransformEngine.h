@@ -1,13 +1,19 @@
 #ifndef TRANSFORMENGINE_H
 #define TRANSFORMENGINE_H
 
+#include <QAbstractTableModel>
+#include <QDropEvent>
+#include <QModelIndex>
 #include <QStringList>
 #include "TransformProviders/enum_transformScope.h"
 #include "TransformProviders/TransformProvider.h"
 
-class TransformEngine
+class TransformEngine: public QAbstractTableModel
 {
+    Q_OBJECT
 public:
+    explicit TransformEngine(QObject* parent = nullptr);
+
     static QStringList getSourceFileNamesList();
     static QStringList getTargetFileNamesList();
     static QString addSourceUrls(QStringList urls);
@@ -20,9 +26,20 @@ public:
     static bool renameFiles();
     static QStringList createTargetUrls();
     static bool sortSourceUrls(bool reverseAlphabetical);
+    static bool transformIsOrderDependent();
+
+    // ViewModel Functions
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    void setFileNames(QStringList sourceFileNames, QStringList targetFileNames);
+    Qt::DropActions supportedDropActions() const override;
+    bool moveRows(const QModelIndex& parent1, int source_first, int source_last, const QModelIndex& parent2, int dest) override;
 
 private:
-    TransformEngine() {}    //Static/singleton- not instanced
+    // TransformEngine() {}    //Static/singleton- not instanced
     static const int maxTransformProviders = 50;
     static int numProviders;
     static int selectedProviderIndex;

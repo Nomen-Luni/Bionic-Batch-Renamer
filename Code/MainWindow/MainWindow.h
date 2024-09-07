@@ -3,8 +3,9 @@
 
 #include <QApplication>
 #include <QMainWindow>
+#include "TransformEngine/TransformEngine.h"
 #include "TransformProviders/TransformProvider.h"
-#include "FileNameTableModel/FileNameTableModel.h"
+//#include "FileNameTableModel/FileNameTableModel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,16 +18,16 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr, QApplication* app = nullptr);
     ~MainWindow();
-    //static void transformChangedCallbackUsingInstancePtr(void * instance, int arg);
 
 private:
     void addProvider(TransformProvider* provider);
     void updateFileNamesTable();
-    FileNameTableModel fileNameTableModel;
+    TransformEngine transformEngine;
     Ui::MainWindow *ui;
 
 public slots:
     void doTransforms();
+    void tableSortOrderChanged(int logicalIndex, Qt::SortOrder sortOrder);
 
 private slots:
     void on_operationComboBox_currentIndexChanged(int index);
@@ -36,6 +37,5 @@ private slots:
     void on_renamePushButton_clicked();
     void on_aboutButton_clicked();
     void on_targetComboBox_currentIndexChanged(int index);
-    void on_TableNameHeaderClicked(int column);
 };
 #endif // MAINWINDOW_H

@@ -1,7 +1,6 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include <QFileDialog>
-#include "TransformEngine/TransformEngine.h"
 #include "AboutDialog/AboutDialog.h"
 
 //Transform providers
@@ -23,10 +22,13 @@ MainWindow::MainWindow(QWidget *parent, QApplication* app)
 
     connect(ui->closePushButton, &QPushButton::clicked, app, &QCoreApplication::quit, Qt::QueuedConnection);
 
-    ui->fileNamesTableView->setModel(&fileNameTableModel);
+    ui->fileNamesTableView->setModel(&transformEngine);
+    //auto fileNamesTableSortSignal = ui->fileNamesTableView->horizontalHeader.sortIndicatorChanged;
+    //connect(ui->fileNamesTableView,&QHeaderView::sortIndicatorChanged,this,this->on_TableNameHeaderClicked(0));
 
     //auto tableNameHeader=ui->fileNamesTableView->horizontalHeader();
-    //connect(tableNameHeader, &QHeaderView::sectionClicked, this, &MainWindow::on_TableNameHeaderClicked);
+    connect(ui->fileNamesTableView->horizontalHeader(),
+                &QHeaderView::sortIndicatorChanged, this, &MainWindow::tableSortOrderChanged);
 
     //TODO: delete providers
     addProvider(new TransformProvider_Case(this));
@@ -61,25 +63,8 @@ void MainWindow::updateFileNamesTable()
     QStringList sourceFileNames=TransformEngine::getSourceFileNamesList();
     QStringList targetFileNames=TransformEngine::getTargetFileNamesList();
 
-    fileNameTableModel.setFileNames(sourceFileNames, targetFileNames);
-
-    //ui->fileNamesTableView->clearContents();
-    //ui->fileNamesTableView->setRowCount(sourcefiles.count());
-
-    /*
-    int row=0;
-    foreach (QString string, sourcefiles)
-    {
-        //ui->fileNamesTableView->setItem(row,0,new QTableWidgetItem(string));
-        row++;
-    }
-    row=0;
-    foreach (QString string, targetfiles)
-    {
-        //ui->fileNamesTableView->setItem(row,1,new QTableWidgetItem(string));
-        row++;
-    }
-    */
+    // TODO: Already got filenames - rejig
+    transformEngine.setFileNames(sourceFileNames, targetFileNames);
 }
 
 void MainWindow::doTransforms()
@@ -145,12 +130,12 @@ void MainWindow::on_targetComboBox_currentIndexChanged(int index)
     doTransforms();
 }
 
-void MainWindow::on_TableNameHeaderClicked(int index)
+void MainWindow::tableSortOrderChanged(int logicalIndex, Qt::SortOrder sortOrder)
 {
-    if (index==0)   //Name column header
+    if (logicalIndex==0)   //Name column header
     {
-        auto val=ui->fileNamesTableView->horizontalHeader()->sortIndicatorOrder();
-        if (val==Qt::SortOrder::AscendingOrder)
+        // auto val=ui->fileNamesTableView->horizontalHeader()->sortIndicatorOrder();
+        if (sortOrder==Qt::SortOrder::AscendingOrder)
         {
             TransformEngine::sortSourceUrls(false);
         }

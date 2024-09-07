@@ -9,6 +9,9 @@ TransformProvider_Numbering::TransformProvider_Numbering(QWidget *parent)
     ui->setupUi(this);
     displayName=QObject::tr("Numbering");
 
+    // Let's program know that if order of items in list changes, output names need recalculating.
+    transformIsOrderDependent=true; // Numbering depends on position.
+
     //Connect change events of all contained control to Main Window's 'transformChanged' slot to trigger an update
     connect(ui->startNumberSpinBox,QOverload<int>::of(&QSpinBox::valueChanged),(MainWindow*)parent, &MainWindow::doTransforms);
     connect(ui->spacerComboBox,QOverload<int>::of(&QComboBox::currentIndexChanged),(MainWindow*)parent, &MainWindow::doTransforms);

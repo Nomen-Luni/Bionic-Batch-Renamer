@@ -159,7 +159,7 @@
        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
       </property>
       <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
+       <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
       </property>
       <property name="dragEnabled">
        <bool>true</bool>
@@ -180,7 +180,7 @@
        <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
       </property>
       <property name="sortingEnabled">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
        <bool>true</bool>

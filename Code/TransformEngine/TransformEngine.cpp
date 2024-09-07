@@ -15,6 +15,10 @@ QStringList TransformEngine::targetFileNamesList;
 QStringList TransformEngine::sourceUrlsList;
 //
 
+TransformEngine::TransformEngine(QObject *parent): QAbstractTableModel(parent)
+{
+}
+
 QStringList TransformEngine::getSourceFileNamesList()
 {
     return sourceFileNamesList;
@@ -166,3 +170,136 @@ bool TransformEngine::sortSourceUrls(bool reverseAlphabetical)
     }
     return true;
 }
+
+bool TransformEngine::transformIsOrderDependent()
+{
+    auto provider=transformProviders[selectedProviderIndex];
+    return provider->transformIsOrderDependent;
+}
+
+///////////////////////////////////////////////////////
+// Everything below here is view model functionality //
+///////////////////////////////////////////////////////
+
+int TransformEngine::rowCount(const QModelIndex & /*parent*/) const
+{
+    return sourceFileNamesList.length();
+}
+
+int TransformEngine::columnCount(const QModelIndex & /*parent*/) const
+{
+    return 2;
+}
+
+QVariant TransformEngine::data(const QModelIndex &index, int role) const
+{
+    if (role == Qt::DisplayRole)
+    {
+        if (index.column() == 0)
+            return sourceFileNamesList[index.row()];
+        else
+            return targetFileNamesList[index.row()];
+    }
+
+    return QVariant();
+}
+
+QVariant TransformEngine::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
+        switch (section) {
+        case 0:
+            return QString("Name");
+        case 1:
+            return QString("New Name");
+        }
+    }
+    return QVariant();
+}
+
+Qt::ItemFlags TransformEngine::flags(const QModelIndex &index) const
+{
+    Qt::ItemFlags flag = QAbstractItemModel::flags(index);
+
+    if (index.isValid()) {
+        return flag | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
+    } else {
+        return flag | Qt::ItemIsDropEnabled;
+    }
+}
+
+void TransformEngine::setFileNames(QStringList sourceFileNames, QStringList targetFileNames)
+{
+    beginResetModel();
+    //this->sourceFileNamesList = sourceFileNames;
+    //this->targetFileNamesList = targetFileNames;
+    endResetModel();
+}
+
+Qt::DropActions TransformEngine::supportedDropActions() const
+{
+    return Qt::CopyAction | Qt::MoveAction;
+}
+
+bool TransformEngine::moveRows(const QModelIndex& parent1, int source_first, int source_last, const QModelIndex& parent2, int dest)
+{
+    if (source_first==dest) return false;
+
+    //beginMoveRows(parent1, source_first, source_last, parent2, dest);
+
+    beginResetModel();
+
+    /*
+    this->sourceFileNames.clear();
+    this->sourceFileNames.append({"00","01","02","03","04","05"});
+    qDebug("moveRows: %i -> %i", source_first, dest);
+    qDebug("%s:%s:%s:%s:%s:%s->",
+           qPrintable(this->sourceFileNames[0]),
+           qPrintable(this->sourceFileNames[1]),
+           qPrintable(this->sourceFileNames[2]),
+           qPrintable(this->sourceFileNames[3]),
+           qPrintable(this->sourceFileNames[4]),
+           qPrintable(this->sourceFileNames[5])
+           );
+    */
+
+    // Re-order source file names list
+    auto sourceVal=this->sourceFileNamesList[source_first];
+    this->sourceFileNamesList.removeAt(source_first);
+    this->sourceFileNamesList.insert(dest,sourceVal);
+
+    if (TransformEngine::transformIsOrderDependent())
+    {
+        TransformEngine::doTransform();
+        //this->targetFileNames=TransformEngine::getTargetFileNamesList();
+    }
+    else
+    {
+        // Re-order target file names list
+        sourceVal=this->targetFileNamesList[source_first];
+        this->targetFileNamesList.removeAt(source_first);
+        this->targetFileNamesList.insert(dest,sourceVal);
+    }
+
+    /*
+    qDebug("%s:%s:%s:%s:%s:%s",
+           qPrintable(this->sourceFileNames[0]),
+           qPrintable(this->sourceFileNames[1]),
+           qPrintable(this->sourceFileNames[2]),
+           qPrintable(this->sourceFileNames[3]),
+           qPrintable(this->sourceFileNames[4]),
+           qPrintable(this->sourceFileNames[5])
+           );
+    */
+
+    endResetModel();
+
+    return true;
+}
+
+/*
+QModelIndex index(int row, int column, const QModelIndex &parent)
+{
+    return new QModelIndex(row, column);
+}
+*/
