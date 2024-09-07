@@ -1,5 +1,5 @@
 #include "TransformEngine.h"
-#include "./FileSystemOverlay/FileSystemOverlay.h"
+// #include "./FileSystemOverlay/FileSystemOverlay.h"
 #include "./FileOperation/FileOperation.h"
 #include <QFileInfo>
 #include <QFile>
@@ -110,10 +110,12 @@ QStringList TransformEngine::createTargetUrls()
 
 bool TransformEngine::renameFiles()
 {
-    bool success;
-    QStringList TargetUrls=TransformEngine::createTargetUrls();
+    // bool success;
+    QStringList targetUrlsList=TransformEngine::createTargetUrls();
 
+    FileOperation::renameFiles(sourceUrlsList, targetUrlsList);
     //Test renames virtually before moving any files - identifies name clashes and illegal file names
+    /*
     FileSystemOverlay fsOverlay;
     for (int index=0; index<sourceUrlsList.length(); index++)
     {
@@ -128,11 +130,12 @@ bool TransformEngine::renameFiles()
         success=sourcefile.rename(TargetUrls[index]);
         if (success==false) return false;
     }
+    */
 
     //Update our stored source file names to match the renamed file names
     sourceUrlsList.clear();
     sourceFileNamesList.clear();
-    foreach (QString targetUrl,TargetUrls)
+    foreach (QString targetUrl,targetUrlsList)
     {
         sourceUrlsList.append(targetUrl);
     }

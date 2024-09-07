@@ -23,7 +23,10 @@ SOURCES += \
     TransformProviders/TransformProvider_SearchReplace.cpp \
     AboutDialog/AboutDialog.cpp \
     FileOperation/FileOperation.cpp \
-    FileSystemOverlay/FileSystemOverlay.cpp
+    FileSystemOverlay/FileSystemOverlay.cpp \
+    Styling/SingleClickWorkaroundProxyStyle.cpp \
+    DragTableView/DragTableView.cpp \
+    FileNameTableModel/FileNameTableModel.cpp
     
 HEADERS += \
     version.h\
@@ -39,7 +42,10 @@ HEADERS += \
     TransformProviders/TransformProvider_SearchReplace.h \
     AboutDialog/AboutDialog.h \
     FileOperation/FileOperation.h \
-    FileSystemOverlay/FileSystemOverlay.h
+    FileSystemOverlay/FileSystemOverlay.h\
+    Styling/SingleClickWorkaroundProxyStyle.h \
+    DragTableView/DragTableView.h \
+    FileNameTableModel/FileNameTableModel.h
     
 FORMS += \
     MainWindow/MainWindow.ui \

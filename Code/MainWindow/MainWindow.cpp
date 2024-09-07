@@ -17,13 +17,18 @@ MainWindow::MainWindow(QWidget *parent, QApplication* app)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowIcon(QIcon::fromTheme(QStringLiteral("system-file-manager")));
+
+    // This doesn't work on Wayland - see call to QGuiApplication::setDesktopFileName() in main.cpp.
+    setWindowIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
 
     connect(ui->closePushButton, &QPushButton::clicked, app, &QCoreApplication::quit, Qt::QueuedConnection);
 
-    auto tableNameHeader=ui->fileNamesTableWidget->horizontalHeader();
-    connect(tableNameHeader, &QHeaderView::sectionClicked, this, &MainWindow::on_TableNameHeaderClicked);
+    ui->fileNamesTableView->setModel(&fileNameTableModel);
 
+    //auto tableNameHeader=ui->fileNamesTableView->horizontalHeader();
+    //connect(tableNameHeader, &QHeaderView::sectionClicked, this, &MainWindow::on_TableNameHeaderClicked);
+
+    //TODO: delete providers
     addProvider(new TransformProvider_Case(this));
     addProvider(new TransformProvider_RemoveChars(this));
     addProvider(new TransformProvider_Numbering(this));
@@ -53,24 +58,28 @@ void MainWindow::on_operationComboBox_currentIndexChanged(int index)
 
 void MainWindow::updateFileNamesTable()
 {
-    QStringList sourcefiles=TransformEngine::getSourceFileNamesList();
-    QStringList targetfiles=TransformEngine::getTargetFileNamesList();
+    QStringList sourceFileNames=TransformEngine::getSourceFileNamesList();
+    QStringList targetFileNames=TransformEngine::getTargetFileNamesList();
 
-    ui->fileNamesTableWidget->clearContents();
-    ui->fileNamesTableWidget->setRowCount(sourcefiles.count());
+    fileNameTableModel.setFileNames(sourceFileNames, targetFileNames);
 
+    //ui->fileNamesTableView->clearContents();
+    //ui->fileNamesTableView->setRowCount(sourcefiles.count());
+
+    /*
     int row=0;
     foreach (QString string, sourcefiles)
     {
-        ui->fileNamesTableWidget->setItem(row,0,new QTableWidgetItem(string));
+        //ui->fileNamesTableView->setItem(row,0,new QTableWidgetItem(string));
         row++;
     }
     row=0;
     foreach (QString string, targetfiles)
     {
-        ui->fileNamesTableWidget->setItem(row,1,new QTableWidgetItem(string));
+        //ui->fileNamesTableView->setItem(row,1,new QTableWidgetItem(string));
         row++;
     }
+    */
 }
 
 void MainWindow::doTransforms()
@@ -81,14 +90,26 @@ void MainWindow::doTransforms()
 
 void MainWindow::on_AddPushButton_clicked()
 {
-    auto fileNames = QFileDialog::getOpenFileNames(this, QFileDialog::tr("Select files to add"),"~","All Files (*.*)");
+    // auto fileNames = QFileDialog::getOpenFileNames(this, QFileDialog::tr("Select files to add"),"~","All Files (*.*)");
+    QFileDialog fileDialog(this);
+    fileDialog.setFileMode(QFileDialog::ExistingFiles);
+    fileDialog.setNameFilter(tr("Any file (*.*)"));
+    fileDialog.setDirectory("/home/lee/Code/Bionic-Batch-Renamer/Temp - Test/");
+
+    //fileDialog.setOption(QFileDialog::DontUseNativeDialog, true); // Makes no difference
+
+    if (!fileDialog.exec()) return;
+
+    auto fileNames=fileDialog.selectedFiles();
+    if (fileNames.size() == 0 ) return;
+
     TransformEngine::addSourceUrls(fileNames);
     doTransforms();
 }
 
 void MainWindow::on_RemovePushButton_clicked()
 {
-    auto indexList = ui->fileNamesTableWidget->selectionModel()->selectedRows();
+    auto indexList = ui->fileNamesTableView->selectionModel()->selectedRows();
     int row;
     //As we're deleting, need to iterate backwards or indices will be wrong
     for (auto index = indexList.crbegin(); index != indexList.crend(); index++)
@@ -102,7 +123,7 @@ void MainWindow::on_RemovePushButton_clicked()
 void MainWindow::on_clearPushButton_clicked()
 {
     TransformEngine::clearSourceUrls();
-    ui->fileNamesTableWidget->clearContents();
+    //ui->fileNamesTableView->clearContents();
 }
 
 void MainWindow::on_renamePushButton_clicked()
@@ -128,7 +149,7 @@ void MainWindow::on_TableNameHeaderClicked(int index)
 {
     if (index==0)   //Name column header
     {
-        auto val=ui->fileNamesTableWidget->horizontalHeader()->sortIndicatorOrder();
+        auto val=ui->fileNamesTableView->horizontalHeader()->sortIndicatorOrder();
         if (val==Qt::SortOrder::AscendingOrder)
         {
             TransformEngine::sortSourceUrls(false);

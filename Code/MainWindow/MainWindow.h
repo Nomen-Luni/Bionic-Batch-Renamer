@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QMainWindow>
 #include "TransformProviders/TransformProvider.h"
+#include "FileNameTableModel/FileNameTableModel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,6 +19,12 @@ public:
     ~MainWindow();
     //static void transformChangedCallbackUsingInstancePtr(void * instance, int arg);
 
+private:
+    void addProvider(TransformProvider* provider);
+    void updateFileNamesTable();
+    FileNameTableModel fileNameTableModel;
+    Ui::MainWindow *ui;
+
 public slots:
     void doTransforms();
 
@@ -30,10 +37,5 @@ private slots:
     void on_aboutButton_clicked();
     void on_targetComboBox_currentIndexChanged(int index);
     void on_TableNameHeaderClicked(int column);
-
-private:
-    void addProvider(TransformProvider* provider);
-    Ui::MainWindow *ui;
-    void updateFileNamesTable();
 };
 #endif // MAINWINDOW_H
